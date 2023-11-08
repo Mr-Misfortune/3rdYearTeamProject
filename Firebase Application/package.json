@@ -1,5 +1,5 @@
 {
-  "name": "single-page-app-skeleton",
+  "name": "firebase-application",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,6 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
-    "firebase": "^10.5.2"
+    "firebase": "^10.5.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
