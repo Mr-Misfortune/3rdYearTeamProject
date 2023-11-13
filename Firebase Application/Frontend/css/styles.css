@@ -1,0 +1,42 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: #eee;
+  padding: 10px;
+}
+
+main {
+  padding: 20px;
+}
+
+#account-tab-content,
+#recipes-tab-content {
+  display: none;
+}
+
+#recipe-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+button {
+  cursor: pointer;
+}

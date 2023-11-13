@@ -17,7 +17,4 @@ const firebaseConfig = {
   measurementId: "G-ZR9Z3JMDQ4",
 };
 
-firebase.initializeApp(firebaseConfig);
-
-// Initialize FirebaseUI
-var ui = new firebaseui.auth.AuthUI(firebase.auth());
+export default firebaseConfig;
