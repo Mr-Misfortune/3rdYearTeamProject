@@ -14,6 +14,7 @@ const userEmailDisplay = document.getElementById("user-email");
 const recipeList = document.getElementById("recipe-list");
 const authButton = document.getElementById("auth-button");
 const createAccountButton = document.getElementById("create-account-button");
+const dietaryTagsFilter = document.getElementById("dietary-tags-filter");
 
 const homeTab = document.getElementById("home-tab");
 const accountTab = document.getElementById("account-tab");
@@ -24,6 +25,7 @@ accountTab.addEventListener("click", () => showTab("account-tab-content"));
 recipesTab.addEventListener("click", () => showTab("recipes-tab-content"));
 authButton.addEventListener("click", handleAuthAction);
 createAccountButton.addEventListener("click", createAccount);
+dietaryTagsFilter.addEventListener("change", updateRecipes);
 
 auth.onAuthStateChanged((user) => {
   if (user) {
@@ -35,7 +37,6 @@ auth.onAuthStateChanged((user) => {
     recipesTabContent.style.display = "none";
     loadRecipes(user.uid);
     createAccountButton.style.display = "none"; // Hide the create account button when logged in
-    alert("Successfully logged in!");
   } else {
     // User is signed out
     userDisplay.innerHTML = "";
@@ -49,6 +50,11 @@ auth.onAuthStateChanged((user) => {
 
   // Update the button text based on the authentication state
   authButton.textContent = user ? "Logout" : "Login";
+
+  // Update the home screen content based on the authentication state
+  homeScreen.innerHTML = user
+    ? `Welcome back, ${user.displayName || user.email}!`
+    : "Welcome to the Recipe App! Log in to explore more.";
 });
 
 function showTab(tabId) {
@@ -68,38 +74,14 @@ function handleAuthAction() {
       console.log("User signed out");
     });
   } else {
-    // User is not logged in, so prompt for login
-    const email = prompt("Enter your email:");
-    const password = prompt("Enter your password:");
-
-    auth
-      .signInWithEmailAndPassword(email, password)
-      .then((userCredential) => {
-        // Signed in
-        const loggedInUser = userCredential.user;
-        console.log("Logged in user:", loggedInUser);
-      })
-      .catch((error) => {
-        console.error("Login error:", error.message);
-      });
+    // User is not logged in, so redirect to the login page
+    window.location.href = "login.html";
   }
 }
 
 function createAccount() {
-  const email = prompt("Enter your email:");
-  const password = prompt("Enter your password:");
-
-  auth
-    .createUserWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-      // Account created
-      const newUser = userCredential.user;
-      console.log("New user created:", newUser);
-      alert("Account created successfully! You can now log in.");
-    })
-    .catch((error) => {
-      console.error("Account creation error:", error.message);
-    });
+  // Redirect to the create account page
+  window.location.href = "create-account.html";
 }
 
 function loadRecipes(userId) {
@@ -111,11 +93,36 @@ function loadRecipes(userId) {
       recipeList.innerHTML = "";
       querySnapshot.forEach((doc) => {
         const recipeItem = document.createElement("li");
-        recipeItem.textContent = doc.data().name;
+        recipeItem.textContent = doc.data().recipeName;
         recipeList.appendChild(recipeItem);
       });
     })
     .catch((error) => {
       console.error("Error loading recipes:", error);
+    });
+}
+
+function updateRecipes() {
+  // Update the displayed recipes based on search and dietary tags filter
+  const searchTerm = searchInput.value.toLowerCase();
+  const selectedDietaryTags = Array.from(dietaryTagsFilter.selectedOptions).map(
+    (option) => option.value
+  );
+
+  db.collection("recipes")
+    .where("recipeName", ">=", searchTerm)
+    .where("recipeName", "<=", searchTerm + "\uf8ff")
+    .where("dietaryTags", "array-contains-any", selectedDietaryTags)
+    .get()
+    .then((querySnapshot) => {
+      recipeList.innerHTML = "";
+      querySnapshot.forEach((doc) => {
+        const recipeItem = document.createElement("li");
+        recipeItem.textContent = doc.data().recipeName;
+        recipeList.appendChild(recipeItem);
+      });
+    })
+    .catch((error) => {
+      console.error("Error searching recipes:", error);
     });
 }
