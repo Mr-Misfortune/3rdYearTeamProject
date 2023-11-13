@@ -15,6 +15,7 @@ const recipeList = document.getElementById("recipe-list");
 const authButton = document.getElementById("auth-button");
 const createAccountButton = document.getElementById("create-account-button");
 const dietaryTagsFilter = document.getElementById("dietary-tags-filter");
+const addRecipeButton = document.getElementById("submit-recipe-button");
 
 const homeTab = document.getElementById("home-tab");
 const accountTab = document.getElementById("account-tab");
@@ -25,7 +26,8 @@ accountTab.addEventListener("click", () => showTab("account-tab-content"));
 recipesTab.addEventListener("click", () => showTab("recipes-tab-content"));
 authButton.addEventListener("click", handleAuthAction);
 createAccountButton.addEventListener("click", createAccount);
-dietaryTagsFilter.addEventListener("change", updateRecipes);
+//dietaryTagsFilter.addEventListener("change", updateRecipes);
+addRecipeButton.addEventListener("click", addRecipe);
 
 auth.onAuthStateChanged((user) => {
   if (user) {
@@ -37,6 +39,7 @@ auth.onAuthStateChanged((user) => {
     recipesTabContent.style.display = "none";
     loadRecipes(user.uid);
     createAccountButton.style.display = "none"; // Hide the create account button when logged in
+    addRecipeButton.style.display = "block"; // Show the add recipe button when logged in
   } else {
     // User is signed out
     userDisplay.innerHTML = "";
@@ -46,6 +49,7 @@ auth.onAuthStateChanged((user) => {
     recipesTabContent.style.display = "none";
     recipeList.innerHTML = "";
     createAccountButton.style.display = "block"; // Show the create account button when logged out
+    addRecipeButton.style.display = "none"; // Hide the add recipe button when logged in
   }
 
   // Update the button text based on the authentication state
@@ -82,6 +86,11 @@ function handleAuthAction() {
 function createAccount() {
   // Redirect to the create account page
   window.location.href = "create-account.html";
+}
+
+function addRecipe() {
+  // Redirect to the add recipe page
+  window.location.href = "submit-recipe.html";
 }
 
 function loadRecipes(userId) {
