@@ -1,5 +1,9 @@
 // submit-recipe.js
+import fireabaseConfig from "./firebase-config.js";
 const recipeForm = document.getElementById("recipe-form");
+firebase.initializeApp(firebaseConfig);
+db = firebase.firestore();
+collection = db.collection("Recipes");
 
 recipeForm.addEventListener("submit", (event) => {
   event.preventDefault();
