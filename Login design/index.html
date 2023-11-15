@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Sign Up Page</title>
+    <link rel = "stylesheet" href = "style.css">
+</head>
+<body>
+    <div class = "container">
+    <div class = "account-box">
+        <div class = "button-box">
+            <div id = "btn"></div>
+           <button type = "button" class = "toggle-btn" onclick = "login()">Login</button>
+           <button type = "button" class = "toggle-btn" onclick = "signUp()">Sign Up</button>
+        </div>
+        <form id = "login" class = "input-group">
+            <input type = "text" class = "input-box" placeholder = "Email" required = "true">
+            <input type = "text" class = "input-box" placeholder = "Password" required = "true">
+            <br></br>
+            <br></br>
+            <button type = "submit" class = "submit-btn">Login</button>
+        </form>
+
+        <form id = "signUp" class = "input-group">
+            <input type = "text" class = "input-box" placeholder = "Email" required = "true">
+            <input type = "text" class = "input-box" placeholder = "Password" required = "true">
+            <br></br>
+            <br></br>
+            <button type = "submit" class = "submit-btn">Sign Up</button>
+        </form>
+    </div>
+    </div>
+
+    <script src="index.js"></script>
+    
+</body>
+</html>
