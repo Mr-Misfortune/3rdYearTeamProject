@@ -10,7 +10,8 @@ const userEmailDisplay = document.getElementById("user-email");
 const recipeList = document.getElementById("recipe-list");
 const authButton = document.getElementById("auth-button");
 const createAccountButton = document.getElementById("create-account-button");
-const dietaryTagsFilter = document.getElementById("dietary-tags-filter");
+const searchRecipesButton = document.getElementById("search-tab");
+//const dietaryTagsFilter = document.getElementById("dietary-tags-filter");
 const addRecipeButton = document.getElementById("submit-recipe-button");
 
 const homeTab = document.getElementById("home-tab");
@@ -22,6 +23,7 @@ accountTab.addEventListener("click", () => showTab("account-tab-content"));
 recipesTab.addEventListener("click", () => showTab("recipes-tab-content"));
 authButton.addEventListener("click", handleAuthAction);
 createAccountButton.addEventListener("click", createAccount);
+searchRecipesButton.addEventListener("click", searchRecipes);
 //dietaryTagsFilter.addEventListener("change", updateRecipes);
 addRecipeButton.addEventListener("click", addRecipe);
 
@@ -91,7 +93,7 @@ function addRecipe() {
 
 function loadRecipes(userId) {
   // Fetch and display user's recipes from Firestore
-  db.collection("recipes")
+  db.collection("Recipes")
     .where("userId", "==", userId)
     .get()
     .then((querySnapshot) => {
@@ -106,7 +108,10 @@ function loadRecipes(userId) {
       console.error("Error loading recipes:", error);
     });
 }
-
+function searchRecipes() {
+  window.location.href = "search-recipes.html";
+}
+/*
 function updateRecipes() {
   // Update the displayed recipes based on search and dietary tags filter
   const searchTerm = searchInput.value.toLowerCase();
@@ -129,5 +134,5 @@ function updateRecipes() {
     })
     .catch((error) => {
       console.error("Error searching recipes:", error);
-    });
-}
+    }); 
+}*/
