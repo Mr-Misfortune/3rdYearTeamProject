@@ -1,9 +1,7 @@
 // submit-recipe.js
-import fireabaseConfig from "./firebase-config.js";
+import { db, auth } from "./firebaseConfig.js";
 const recipeForm = document.getElementById("recipe-form");
-firebase.initializeApp(firebaseConfig);
-db = firebase.firestore();
-collection = db.collection("Recipes");
+const collection = db.collection("Recipes");
 
 recipeForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -20,7 +18,7 @@ recipeForm.addEventListener("submit", (event) => {
 
   if (user) {
     // User is logged in, so save the recipe to Firestore
-    db.collection("recipes")
+    collection
       .add({
         userId: user.uid,
         recipeName,

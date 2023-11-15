@@ -1,10 +1,6 @@
 import "https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js";
 import "https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js";
-import firebaseConfig from "./firebaseConfig.js";
-
-firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
-const db = firebase.firestore();
+import { db, auth } from "./firebaseConfig.js";
 
 const homeScreen = document.getElementById("home-screen");
 const accountTabContent = document.getElementById("account-tab-content");
