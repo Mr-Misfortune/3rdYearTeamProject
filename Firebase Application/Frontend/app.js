@@ -110,28 +110,3 @@ function loadRecipes(userId) {
       console.error("Error loading recipes:", error);
     });
 }
-
-function updateRecipes() {
-  // Update the displayed recipes based on search and dietary tags filter
-  const searchTerm = searchInput.value.toLowerCase();
-  const selectedDietaryTags = Array.from(dietaryTagsFilter.selectedOptions).map(
-    (option) => option.value
-  );
-
-  db.collection("recipes")
-    .where("recipeName", ">=", searchTerm)
-    .where("recipeName", "<=", searchTerm + "\uf8ff")
-    .where("dietaryTags", "array-contains-any", selectedDietaryTags)
-    .get()
-    .then((querySnapshot) => {
-      recipeList.innerHTML = "";
-      querySnapshot.forEach((doc) => {
-        const recipeItem = document.createElement("li");
-        recipeItem.textContent = doc.data().recipeName;
-        recipeList.appendChild(recipeItem);
-      });
-    })
-    .catch((error) => {
-      console.error("Error searching recipes:", error);
-    });
-}
