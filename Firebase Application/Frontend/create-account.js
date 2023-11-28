@@ -1,4 +1,3 @@
-// create-account.js
 document
   .getElementById("create-account-form")
   .addEventListener("submit", function (event) {
@@ -10,7 +9,13 @@ document
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
-      .then(() => {
+      .then((userCredential) => {
+        const user = userCredential.user;
+
+        // Automatically create a Firestore collection with the user's UID
+        const db = firebase.firestore();
+        const userCollection = db.collection(user.uid);
+
         alert("Account created successfully! You can now log in.");
         window.location.href = "login.html"; // Redirect to the login page
       })
