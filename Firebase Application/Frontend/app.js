@@ -1,10 +1,6 @@
 import "https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js";
 import "https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js";
-import firebaseConfig from "./firebaseConfig.js";
-
-firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
-const db = firebase.firestore();
+import { db, auth } from "./firebaseConfig.js";
 
 const homeScreen = document.getElementById("home-screen");
 const accountTabContent = document.getElementById("account-tab-content");
@@ -14,7 +10,8 @@ const userEmailDisplay = document.getElementById("user-email");
 const recipeList = document.getElementById("recipe-list");
 const authButton = document.getElementById("auth-button");
 const createAccountButton = document.getElementById("create-account-button");
-const dietaryTagsFilter = document.getElementById("dietary-tags-filter");
+const searchRecipesButton = document.getElementById("search-tab");
+//const dietaryTagsFilter = document.getElementById("dietary-tags-filter");
 const addRecipeButton = document.getElementById("submit-recipe-button");
 
 const homeTab = document.getElementById("home-tab");
@@ -26,6 +23,7 @@ accountTab.addEventListener("click", () => showTab("account-tab-content"));
 recipesTab.addEventListener("click", () => showTab("recipes-tab-content"));
 authButton.addEventListener("click", handleAuthAction);
 createAccountButton.addEventListener("click", createAccount);
+searchRecipesButton.addEventListener("click", searchRecipes);
 //dietaryTagsFilter.addEventListener("change", updateRecipes);
 addRecipeButton.addEventListener("click", addRecipe);
 
@@ -95,7 +93,7 @@ function addRecipe() {
 
 function loadRecipes(userId) {
   // Fetch and display user's recipes from Firestore
-  db.collection("recipes")
+  db.collection("Recipes")
     .where("userId", "==", userId)
     .get()
     .then((querySnapshot) => {
@@ -109,4 +107,7 @@ function loadRecipes(userId) {
     .catch((error) => {
       console.error("Error loading recipes:", error);
     });
+}
+function searchRecipes() {
+  window.location.href = "search-recipes.html";
 }
