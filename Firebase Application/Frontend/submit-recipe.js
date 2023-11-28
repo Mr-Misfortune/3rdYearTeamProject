@@ -38,7 +38,7 @@ recipeForm.addEventListener("submit", (event) => {
       });
 
     // Add to the user-specific collection
-    userRecipesCollection
+    /* userRecipesCollection
       .add({
         recipeName,
         ingredients,
@@ -60,6 +60,7 @@ recipeForm.addEventListener("submit", (event) => {
         );
         alert("Failed to submit recipe. Please try again.");
       });
+  */
   } else {
     // User is not logged in, prompt them to log in first
     alert("Please log in before submitting a recipe.");

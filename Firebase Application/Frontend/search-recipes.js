@@ -1,4 +1,4 @@
-import { db, auth } from "../Backend/firebaseConfig.js";
+import { db, auth } from "./firebase.js";
 const button = document.getElementById("submit");
 const searchResults = document.getElementById("search-results");
 button.addEventListener("click", searchRecipes);
@@ -58,8 +58,6 @@ function displayRecipes(recipes) {
       const recipeDiv = document.createElement("div");
       recipeDiv.innerHTML = `
             <h3>${recipe.recipeName}</h3>
-            <p>${recipe.ingredients}</p>
-            <p>${recipe.instructions}</p>
         `;
       searchResults.appendChild(recipeDiv);
     });
