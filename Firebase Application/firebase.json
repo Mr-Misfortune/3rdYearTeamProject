@@ -1,6 +1,6 @@
 {
-  "firestore": {
-    "rules": "firestore.rules",
-    "indexes": "firestore.indexes.json"
+  "hosting": {
+    "public": "Fartend",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
   }
 }
