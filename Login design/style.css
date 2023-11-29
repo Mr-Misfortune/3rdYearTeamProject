@@ -28,7 +28,7 @@
 .button-box{
     width: 220px;
     border-radius: 30px;
-    box-shadow: 0 0 25px 18px #c524ff37;
+    box-shadow: 0 0 25px 18px #43bc3037;
     margin: 40px auto;
     position: relative;
 }
@@ -39,7 +39,7 @@
     top:0;
     left: 0;
     position: absolute;
-    background: linear-gradient(to right, #4410ff, #ff06b4);
+    background: linear-gradient(to bottom left, rgb(21, 126, 21), rgb(134, 234, 134));
     border-radius: 30px;
     transition: 0.8s;
 }
@@ -68,7 +68,7 @@
     outline: none;
     display: block;
     margin: auto;
-    background: linear-gradient(to right, #4410ff, #ff06b4);
+    background: linear-gradient(to bottom left, rgb(21, 126, 21), rgb(134, 234, 134));
 }
 
 .input-box{
