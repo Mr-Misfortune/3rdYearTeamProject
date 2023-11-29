@@ -1,8 +1,8 @@
 import "https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js";
 import "https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js";
-import { db, auth } from "./firebase.js";
+import { db, auth } from "../firebase.js";
 
-const homeScreen = document.getElementById("home-screen");
+const homeScreen = document.getElementById("home-page");
 const accountTabContent = document.getElementById("account-tab-content");
 const recipesTabContent = document.getElementById("recipes-tab-content");
 const userDisplay = document.getElementById("user-info");
@@ -14,11 +14,8 @@ const searchRecipesButton = document.getElementById("search-tab");
 //const dietaryTagsFilter = document.getElementById("dietary-tags-filter");
 const addRecipeButton = document.getElementById("submit-recipe-button");
 
-const homeTab = document.getElementById("home-tab");
 const accountTab = document.getElementById("account-tab");
 const recipesTab = document.getElementById("recipes-tab");
-
-homeTab.addEventListener("click", () => showTab("home-screen"));
 accountTab.addEventListener("click", () => showTab("account-tab-content"));
 recipesTab.addEventListener("click", () => showTab("recipes-tab-content"));
 authButton.addEventListener("click", handleAuthAction);
