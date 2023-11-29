@@ -3,43 +3,57 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Recipe App</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <title>Recipe Realm</title>
+    <link rel="stylesheet" href="css/homepage.css" />
+    <link rel="icon" href="css/favicon.ico" type="image/x-icon">
   </head>
-  <body>
+  <body background ="css/image1.jpeg">
+  
     <div id="app">
       <header>
-        <h1>Recipe App</h1>
+        <h1>Recipe Realm</h1>
         <div id="user-info"></div>
       </header>
 
       <nav>
-        <button id="home-tab">Home</button>
-        <button id="account-tab">Account</button>
-        <button id="recipes-tab">Recipes</button>
-        <button id="search-tab">Search</button>
-        <button id="auth-button">Login</button>
-        <button id="create-account-button" style="display: none">
+        <button id="account-tab" class = "button btn1">Account</button>
+        <button id="recipes-tab" class = "button btn1">Recipes</button>
+        <button id="search-tab" class = "buttib btn1">Search</button>
+        <button id="auth-button" class = "button btn1">Login</button>
+        <button id="create-account-button"  class = "button btn1"style="display: none">
           Create Account
         </button>
-        <button id="submit-recipe-button" style="display: none">
+        <button id="submit-recipe-button"  class = "button btn1"style="display: none">
           Submit Recipe
         </button>
       </nav>
 
-      <main>
-        <div id="home-screen">
-          <p>Welcome to the Recipe App! Log in to explore more.</p>
+        <main>
+
+     <img class="pics" src="https://images.pexels.com/photos/775032/pexels-photo-775032.jpeg?auto=compress&cs=tinysrgb&w=600" style="width:600px; height: 860px;">
+        <img class="pics" src="https://images.pexels.com/photos/1410235/pexels-photo-1410235.jpeg?auto=compress&cs=tinysrgb&w=600" style="width:600px; height: 860px;">
+        <img class="pics" src="https://images.pexels.com/photos/2280545/pexels-photo-2280545.jpeg?auto=compress&cs=tinysrgb&w=600" style="width:600px; height: 860px;">
+        <img class="pics" src="https://images.pexels.com/photos/842571/pexels-photo-842571.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" style="width:600px; height: 860px;">
+        <img class="pics" src="https://images.pexels.com/photos/1633526/pexels-photo-1633526.jpeg?auto=compress&cs=tinysrgb&w=600" style="width:600px; height: 860px;">
+      
+        <button class="display-left" onclick="btnPressed(-1)">&#10094;</button>
+        <button class="display-right" onclick="btnPressed(1)">&#10095;</button>
+
+        <div id="home-page">
+    
+          <h4 class = "header1"><strong>Welcome to the recipe app!</strong></h4>
+          <h4 class = "header2">Please login or</br>create an account!</h4>
+
         </div>
 
         <div id="account-tab-content">
-          <h2>Account Information</h2>
-          <p id="user-email"></p>
+          <h2 class = "header1"><strong>Account Information</strong></h2>
+          <p id="user-email" class = "body1"></p>
         </div>
 
         <div id="recipes-tab-content">
-          <h2>My Recipes</h2>
-          <ul id="recipe-list"></ul>
+          <h2 class = "header1"><strong>My Recipes</strong></h2>
+          <ul id="recipe-list" class = "header2"></ul>
         </div>
       </main>
     </div>
@@ -47,5 +61,6 @@
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
     <script type="module" src="app.js"></script>
+    <script src="homepage.js"></script>
   </body>
 </html>
