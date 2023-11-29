@@ -1,3 +1,5 @@
+import { db, auth } from "./firebase.js";
+
 document
   .getElementById("create-account-form")
   .addEventListener("submit", function (event) {
@@ -13,7 +15,7 @@ document
         const user = userCredential.user;
 
         // Automatically create a Firestore collection with the user's UID
-        const db = firebase.firestore();
+
         const userCollection = db.collection(user.uid);
 
         alert("Account created successfully! You can now log in.");

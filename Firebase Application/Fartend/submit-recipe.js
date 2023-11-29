@@ -1,6 +1,6 @@
-const auth = firebase.auth();
+import { db, auth } from "./firebase.js";
+
 const recipeForm = document.getElementById("recipe-form");
-const db = firebase.firestore();
 const generalRecipesCollection = db.collection("Recipes");
 
 recipeForm.addEventListener("submit", (event) => {

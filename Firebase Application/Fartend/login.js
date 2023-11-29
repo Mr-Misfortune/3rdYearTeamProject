@@ -1,4 +1,6 @@
 // login.js
+import { db, auth } from "./firebase.js";
+
 document
   .getElementById("login-form")
   .addEventListener("submit", function (event) {

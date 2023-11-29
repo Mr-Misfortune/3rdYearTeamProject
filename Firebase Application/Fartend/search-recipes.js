@@ -1,4 +1,5 @@
 import { db, auth } from "./firebase.js";
+
 const button = document.getElementById("submit");
 const searchResults = document.getElementById("search-results");
 button.addEventListener("click", searchRecipes);
