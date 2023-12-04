@@ -1,6 +1,4 @@
 // login.js
-import { db, auth } from "./firebase.js";
-
 document
   .getElementById("login-form")
   .addEventListener("submit", function (event) {
@@ -20,3 +18,18 @@ document
         alert("Login failed. Please check your email and password.");
       });
   });
+var loginform = document.getElementById("login-form");
+var signupform = document.getElementById("create-account-form");
+var buttons = document.getElementById("btn");
+
+function signUp() {
+  loginform.style.left = "-300px";
+  signupform.style.left = "40px";
+  buttons.style.left = "110px";
+}
+
+function login() {
+  loginform.style.left = "40px";
+  signupform.style.left = "440px";
+  buttons.style.left = "0";
+}

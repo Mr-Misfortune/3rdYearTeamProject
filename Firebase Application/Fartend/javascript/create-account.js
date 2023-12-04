@@ -1,5 +1,3 @@
-import { db, auth } from "./firebase.js";
-
 document
   .getElementById("create-account-form")
   .addEventListener("submit", function (event) {
