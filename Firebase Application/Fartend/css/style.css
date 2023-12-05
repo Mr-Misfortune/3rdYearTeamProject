@@ -91,10 +91,13 @@
   background: transparent;
 }
 
-#login {
+#login-form {
   left: 40px;
 }
 
-#signUp {
+#create-account-form {
   left: 440px;
+}
+.header {
+  text-align: center;
 }
