@@ -6,6 +6,6 @@ import "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
 
 const app = firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
-const auth = firebase.auth();
+//const auth = firebase.auth();
 
-export { db, app, auth };
+export { db, app };

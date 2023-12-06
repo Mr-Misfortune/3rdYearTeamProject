@@ -31,7 +31,7 @@ function showSlide(n) {
 } */
 
 //the code below is for an automatic slideshow
-let slideNum = 0;
+slideNum = 0;
 showSlides();
 
 function showSlides() {
