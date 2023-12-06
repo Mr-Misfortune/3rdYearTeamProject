@@ -1,5 +1,5 @@
 //the code below is for a manual slideshow
-var slideNum = 1;
+/*var slideNum = 1;
 showSlide(slideNum);
 
 function btnPressed(n) {
@@ -22,7 +22,7 @@ function showSlide(n) {
   }
 
   slides[slideNum - 1].style.display = "block";
-}
+} */
 
 //the code below is for an automatic slideshow
 let slideNum = 0;
