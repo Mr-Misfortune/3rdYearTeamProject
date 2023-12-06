@@ -6,8 +6,9 @@ body {
 }
 
 #app {
-  max-width: 800px;
+  max-width: 750px;
   margin: 0 auto;
+
 }
 
 header {
@@ -15,17 +16,29 @@ header {
   color: #fff;
   padding: 10px;
   text-align: center;
+  outline-style: inset;
+  outline-width: 1px;
+  outline-color: #979797;
+  text-align: center;
 }
 
 nav {
   display: flex;
   justify-content: space-around;
   background-color: #eee;
-  padding: 10px;
+  padding: 10px;  
+  outline-style: inset;
+  outline-width: 1px;
+  outline-color: #979797;
+  text-align: center;
 }
 
 main {
   padding: 20px;
+  outline-style: inset;
+  outline-width: 1px;
+  outline-color: #979797;
+  text-align: center;
 }
 
 #account-tab-content,

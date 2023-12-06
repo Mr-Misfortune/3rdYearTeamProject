@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/homepage.css" />
     <link rel="icon" href="css/favicon.ico" type="image/x-icon">
   </head>
-  <body background ="css/image1.jpeg">
+  <body>
   
     <div id="app">
       <header>
@@ -30,15 +30,6 @@
 
         <main>
 
-     <img class="pics" src="https://images.pexels.com/photos/775032/pexels-photo-775032.jpeg?auto=compress&cs=tinysrgb&w=600" style="width:600px; height: 860px;">
-        <img class="pics" src="https://images.pexels.com/photos/1410235/pexels-photo-1410235.jpeg?auto=compress&cs=tinysrgb&w=600" style="width:600px; height: 860px;">
-        <img class="pics" src="https://images.pexels.com/photos/2280545/pexels-photo-2280545.jpeg?auto=compress&cs=tinysrgb&w=600" style="width:600px; height: 860px;">
-        <img class="pics" src="https://images.pexels.com/photos/842571/pexels-photo-842571.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" style="width:600px; height: 860px;">
-        <img class="pics" src="https://images.pexels.com/photos/1633526/pexels-photo-1633526.jpeg?auto=compress&cs=tinysrgb&w=600" style="width:600px; height: 860px;">
-      
-        <button class="display-left" onclick="btnPressed(-1)">&#10094;</button>
-        <button class="display-right" onclick="btnPressed(1)">&#10095;</button>
-
         <div id="home-page">
     
           <h4 class = "header1"><strong>Welcome to the recipe app!</strong></h4>
@@ -57,6 +48,25 @@
         </div>
       </main>
     </div>
+
+    <script>
+      var images = [
+        'https://images.pexels.com/photos/349610/pexels-photo-349610.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        'https://images.pexels.com/photos/1410235/pexels-photo-1410235.jpeg?auto=compress&cs=tinysrgb&w=600',
+        'https://images.pexels.com/photos/616401/pexels-photo-616401.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        'https://images.pexels.com/photos/1414651/pexels-photo-1414651.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+        // Add as many images as you want
+      ];
+      var i = 0;
+    
+      setInterval(function() {
+        document.body.style.backgroundImage = 'url(' + images[i] + ')';
+        i++;
+        if (i == images.length) {
+            i = 0;
+        }
+      }, 2000); // Change image every 5 seconds
+    </script>
 
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
