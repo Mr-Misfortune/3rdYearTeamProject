@@ -6,7 +6,7 @@ body {
 }
 
 #app {
-  max-width: 600px;
+  max-width: 750px;
   max-height: 100%;
   margin: 0 auto;
 }
@@ -25,7 +25,11 @@ header {
   padding: 10px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
+  outline-style: inset;
+  outline-width: 1px;
+  outline-color: #979797;
   text-align: center;
+
 }
 
 nav {
@@ -33,12 +37,19 @@ nav {
   justify-content: space-around;
   background-color: #eee;
   padding: 10px;
+  outline-style: inset;
+  outline-width: 1px;
+  outline-color: #979797;
+
 }
 
 main {
   padding: 150px;
   background-color: #eee;
   height: 500px;
+  outline-style: inset;
+  outline-width: 1px;
+  outline-color: #979797;
 }
 
 #account-tab-content,
