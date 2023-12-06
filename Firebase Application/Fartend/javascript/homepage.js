@@ -1,4 +1,4 @@
-// THIS CODE IS NOT IN USE ; 
+// THIS CODE IS NOT IN USE ;
 // KEEPING IT FOR ARCHIVAL PURPOSES
 
 /*
@@ -58,4 +58,4 @@ function showSlides() {
         <img class="pics" src="https://images.pexels.com/photos/2280545/pexels-photo-2280545.jpeg?auto=compress&cs=tinysrgb&w=600" style="width:750px; height: 860px;">
         <img class="pics" src="https://images.pexels.com/photos/842571/pexels-photo-842571.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" style="width:750px; height: 860px;">
         <img class="pics" src="https://images.pexels.com/photos/1633526/pexels-photo-1633526.jpeg?auto=compress&cs=tinysrgb&w=600" style="width:750px; height: 860px;">
-        body background ="css/image1.jpeg"
+        body background ="css/image1.jpeg"*/
