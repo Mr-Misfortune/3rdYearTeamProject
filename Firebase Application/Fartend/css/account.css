@@ -1,0 +1,198 @@
+/* styles.css */
+body {
+    font-family: "Lucida Sans";
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#app {
+    max-width: 750px;
+    max-height: 100%;
+    margin: 0 auto;
+}
+
+#background {
+    max-width: 800px;
+    background-color: white;
+}
+
+header {
+    background-image: linear-gradient(to bottom left,
+            rgb(21, 126, 21),
+            rgb(134, 234, 134));
+    padding: 10px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    outline-style: inset;
+    outline-width: 1px;
+    outline-color: #979797;
+    text-align: center;
+
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #eee;
+    padding: 10px;
+    outline-style: inset;
+    outline-width: 1px;
+    outline-color: #979797;
+
+}
+
+main {
+    padding: 150px;
+    background-color: #eee;
+    height: 500px;
+    outline-style: inset;
+    outline-width: 1px;
+    outline-color: #979797;
+}
+
+#account-tab-content,
+#recipes-tab-content {
+    display: none;
+}
+
+#recipe-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+button {
+    cursor: pointer;
+}
+
+.btn1 {
+    width: 20%;
+    border: 0;
+    padding: 12px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    outline: solid #979797;
+    display: block;
+    margin: auto;
+    background: solid #ffffff;
+    z-index: 2;
+}
+
+.button :hover {
+    background-color: rgb(86, 153, 86);
+    color: white;
+}
+
+.display-left,
+.display-right {
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    margin-top: 27px;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    color: rgba(21, 240, 12);
+    font-weight: bold;
+    transition: 0.8s ease;
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+
+.display-left {
+    left: 460px;
+    border-radius: 3px;
+}
+
+.display-right {
+    right: 460px;
+    border-radius: 3px;
+}
+
+.display-left:hover,
+.display-right:hover {
+    background-color: rgba(27, 42, 128, 0.504);
+}
+
+.pics {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+.display-container {
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+img {
+    position: absolute;
+    margin: -210px 400px 300px -150px;
+}
+
+.header1 {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    color: rgb(61, 168, 57);
+    font-weight: 300;
+    font-size: 36px;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    text-shadow: 2px 2px 4px rgb(56, 224, 49, 0.4);
+    z-index: 2;
+}
+
+.header2 {
+    position: absolute;
+    top: 35%;
+    left: 44%;
+    color: rgb(56, 207, 50);
+    font-weight: 300;
+    font-size: 36px;
+    text-align: left;
+    transform: translate(-50%, -50%);
+    text-shadow: 3px 3px 4px rgb(56, 224, 49, 0.4);
+    z-index: 2;
+}
+
+.body1 {
+    position: absolute;
+    top: 35%;
+    left: 44%;
+    color: rgb(56, 207, 50);
+    font-weight: 300;
+    font-size: 24px;
+    text-align: left;
+    transform: translate(-50%, -50%);
+    text-shadow: 3px 3px 4px rgb(56, 224, 49, 0.4);
+    z-index: 2;
+}
+
+.profile-info,
+.account-settings,
+.uploaded-recipes {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info h2,
+.account-settings h2,
+.uploaded-recipes h2 {
+    margin-top: 0;
+    color: #8bc34a;
+}
+
+/* Color variations for sections */
+.account-settings {
+    background-color: #f9fbe7;
+}
+
+.uploaded-recipes {
+    background-color: #dcedc8;
+}
