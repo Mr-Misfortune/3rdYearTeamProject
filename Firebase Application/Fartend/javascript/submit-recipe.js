@@ -1,9 +1,24 @@
 import { db, auth } from "./firebase.js";
+import { generateRandomString } from "./generator.js";
 
 const recipeForm = document.getElementById("recipe-form");
 const generalRecipesCollection = db.collection("Recipes");
+const internalID = generateRandomString();
 
-recipeForm.addEventListener("submit", (event) => {
+const checkIfInternalIDExists = async (internalID) => {
+  try {
+    const querySnapshot = await generalRecipesCollection
+      .where("internalID", "==", internalID)
+      .get();
+
+    return !querySnapshot.empty;
+  } catch (error) {
+    console.error("Error checking internalID:", error);
+    throw error; // Rethrow the error to handle it in the calling code
+  }
+};
+
+recipeForm.addEventListener("submit", async (event) => {
   event.preventDefault();
 
   const recipeName = document.getElementById("recipe-name").value;
@@ -14,55 +29,46 @@ recipeForm.addEventListener("submit", (event) => {
     (option) => option.value
   );
 
-  const user = auth.currentUser; // Assuming you have Firebase Authentication properly set up
+  const user = auth.currentUser;
 
   if (user) {
-    // User is logged in, so save the recipe to both general and user-specific collections
-    const userRecipesCollection = db.collection(user.uid);
+    try {
+      if (await checkIfInternalIDExists(internalID)) {
+        console.log("internalID already exists");
+        // Regenerate internalID or handle the situation accordingly
+      } else {
+        console.log("internalID does not exist");
 
-    // Add to the general "Recipes" collection
-    generalRecipesCollection
-      .add({
-        userId: user.uid,
-        recipeName,
-        ingredients,
-        instructions,
-        dietaryTags,
-      })
-      .then((docRef) => {
-        console.log("Recipe added to general collection with ID:", docRef.id);
-      })
-      .catch((error) => {
-        console.error("Error adding recipe to general collection:", error);
-        alert("Failed to submit recipe. Please try again.");
-      });
+        const userRecipesCollection = db.collection(user.uid);
 
-    // Add to the user-specific collection
-    /* userRecipesCollection
-      .add({
-        recipeName,
-        ingredients,
-        instructions,
-        dietaryTags,
-      })
-      .then((docRef) => {
+        // Add to the general "Recipes" collection
+        const generalRecipeRef = await generalRecipesCollection.add({
+          userId: user.uid,
+          internalID,
+          recipeName,
+          ingredients,
+          instructions,
+          dietaryTags,
+        });
+
         console.log(
-          "Recipe added to user-specific collection with ID:",
-          docRef.id
+          "Recipe added to general collection with ID:",
+          generalRecipeRef.id
         );
+
+        // Show success alert
         alert("Recipe submitted successfully!");
-        // Clear the form or redirect to a confirmation page
-      })
-      .catch((error) => {
-        console.error(
-          "Error adding recipe to user-specific collection:",
-          error
-        );
-        alert("Failed to submit recipe. Please try again.");
-      });
-  */
+
+        // Redirect to index.html
+        window.location.href = "index.html";
+      }
+    } catch (error) {
+      console.error("Error:", error);
+
+      // Show error alert
+      alert("Failed to submit recipe. Please try again.");
+    }
   } else {
-    // User is not logged in, prompt them to log in first
     alert("Please log in before submitting a recipe.");
   }
 });

@@ -174,3 +174,30 @@ img {
   text-shadow: 3px 3px 4px rgb(56, 224, 49, 0.4);
   z-index: 2;
 }
+
+.recipe-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1px; /* Adjust the gap between buttons */
+  margin-top: 1px; /* Add or adjust the margin-top to reduce the gap between header and buttons */
+}
+
+.recipe-button {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 15px; /* Increase border-radius for a rounder look */
+  padding: 20px; /* Increase padding for larger buttons */
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  width: 150px; /* Set a fixed width for consistency */
+  box-sizing: border-box; /* Include padding and border in the total width */
+}
+
+.recipe-button:hover {
+  background-color: #f2f2f2;
+  transform: scale(1.05);
+}
+#recipes-tab-content {
+  margin-top: 20px; /* Increase or decrease the margin-top to move the header down */
+}

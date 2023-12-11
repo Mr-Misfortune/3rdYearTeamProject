@@ -88,23 +88,41 @@ function addRecipe() {
   window.location.href = "submit-recipe.html";
 }
 
+// ... (Your existing JavaScript code) ...
+
 function loadRecipes(userId) {
   // Fetch and display user's recipes from Firestore
   db.collection("Recipes")
     .where("userId", "==", userId)
     .get()
     .then((querySnapshot) => {
-      recipeList.innerHTML = "";
+      const recipeListContainer = document.getElementById("recipe-list");
+      recipeListContainer.innerHTML = "";
+
       querySnapshot.forEach((doc) => {
-        const recipeItem = document.createElement("li");
-        recipeItem.textContent = doc.data().recipeName;
-        recipeList.appendChild(recipeItem);
+        const recipeButton = document.createElement("div");
+        recipeButton.classList.add("recipe-button");
+        recipeButton.textContent = doc.data().recipeName;
+
+        // Set data-internal-id attribute with the internalID from Firestore
+        recipeButton.setAttribute("data-internal-id", doc.data().internalID);
+
+        // Add click event listener to each recipe button
+        recipeButton.addEventListener("click", (event) => {
+          const internalID =
+            event.currentTarget.getAttribute("data-internal-id");
+          // Redirect to the view recipe page with the internalID as a query parameter
+          window.location.href = `viewrecipe.html?internalID=${internalID}`;
+        });
+
+        recipeListContainer.appendChild(recipeButton);
       });
     })
     .catch((error) => {
       console.error("Error loading recipes:", error);
     });
 }
+
 function searchRecipes() {
   window.location.href = "search-recipes.html";
 }

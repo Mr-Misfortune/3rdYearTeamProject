@@ -58,11 +58,22 @@ function displayRecipes(recipes) {
     recipes.forEach((recipe) => {
       const recipeDiv = document.createElement("div");
       recipeDiv.innerHTML = `
-            <h3>${recipe.recipeName}</h3>
+          <h3>${recipe.recipeName}</h3>
         `;
+
+      // Attach an event listener to open the viewrecipe page on click
+      recipeDiv.addEventListener("click", () => {
+        openViewRecipePage(recipe.internalID);
+      });
+
       searchResults.appendChild(recipeDiv);
     });
   }
 
   searchResults.style.display = "block";
+}
+
+function openViewRecipePage(internalID) {
+  // Redirect to the viewrecipe page with the internalID as a parameter
+  window.location.href = `viewrecipe.html?internalID=${internalID}`;
 }
