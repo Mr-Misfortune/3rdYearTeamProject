@@ -1,25 +1,26 @@
+<<<<<<< HEAD
 //the code below is for a manual slideshow
 /*var slideNum = 1;
 showSlide(slideNum);
-
+      
 function btnPressed(n) {
-  showSlide((slideNum += n));
+    showSlide(slideNum += n);
 }
 
 function showSlide(n) {
-  var slides = document.getElementsByClassName("pics");
+    var slides = document.getElementsByClassName("pics");
+    
+    if (n > slides.length) {
+        slideNum = 1;
+    }
 
-  if (n > slides.length) {
-    slideNum = 1;
-  }
-
-  if (n < 1) {
-    slideNum = slides.length;
-  }
-
-  for (var i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
+    if (n < 1) {
+        slideNum = slides.length;
+    }
+    
+    for (var i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
 
   slides[slideNum - 1].style.display = "block";
 } */
