@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Lucida Sans";
+  font-weight: 80;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  background-image: url(https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+}
+
+.account-box {
+  height: 470px;
+  width: 360px;
+  margin: 8% auto;
+  background: #ffffff;
+  padding: 8px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.button-box {
+  width: 220px;
+  border-radius: 30px;
+  box-shadow: 0 0 25px 18px #c524ff37;
+  margin: 40px auto;
+  position: relative;
+}
+
+#btn {
+  width: 110px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background: linear-gradient(
+    to bottom left,
+    rgb(21, 126, 21),
+    rgb(134, 234, 134)
+  );
+  border-radius: 30px;
+  transition: 0.8s;
+}
+
+.toggle-btn {
+  padding: 10px 32px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.input-group {
+  top: 180px;
+  position: absolute;
+  width: 280px;
+  transition: 0.8s;
+}
+
+.submit-btn {
+  width: 80%;
+  border: 0;
+  padding: 12px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  outline: none;
+  display: block;
+  margin: auto;
+  background: linear-gradient(
+    to bottom left,
+    rgb(21, 126, 21),
+    rgb(134, 234, 134)
+  );
+}
+
+.input-box {
+  width: 100%;
+  padding: 10px 0;
+  margin: 5px 0;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  border-bottom: 1px solid #999;
+  outline: none;
+  background: transparent;
+}
+
+#login-form {
+  left: 40px;
+}
+
+#create-account-form {
+  left: 440px;
+}
+.header {
+  text-align: center;
+}

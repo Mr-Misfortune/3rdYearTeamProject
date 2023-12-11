@@ -1,4 +1,4 @@
-import { db, auth } from "./firebase.js";
+import { db } from "./firebase.js";
 
 const button = document.getElementById("submit");
 const searchResults = document.getElementById("search-results");
