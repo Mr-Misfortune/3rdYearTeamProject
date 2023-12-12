@@ -26,7 +26,7 @@ nav {
   display: flex;
   justify-content: space-around;
   background-color: #eee;
-  padding: 10px;  
+  padding: 10px;
   outline-style: inset;
   outline-width: 1px;
   outline-color: #979797;
@@ -41,6 +41,8 @@ main {
   text-align: center;
 }
 
+
+
 #account-tab-content,
 #recipes-tab-content {
   display: none;
@@ -53,4 +55,13 @@ main {
 
 button {
   cursor: pointer;
+}
+
+h1 a,
+#account-tab a,
+#search-tab a,
+#recipes-tab a,
+#auth-button a {
+  text-decoration: none;
+  color: #000;
 }

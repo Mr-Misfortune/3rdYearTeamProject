@@ -50,6 +50,20 @@ main {
     outline-color: #979797;
 }
 
+.header1 {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    color: rgb(61, 168, 57);
+    font-weight: 300;
+    font-size: 36px;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    text-shadow: 2px 2px 4px rgb(56, 224, 49, 0.4);
+    z-index: 2;
+}
+
+
 #account-tab-content,
 #recipes-tab-content {
     display: none;
@@ -114,47 +128,10 @@ button {
     background-color: rgba(27, 42, 128, 0.504);
 }
 
-.pics {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: none;
-}
 
 .display-container {
     background-repeat: no-repeat;
     position: relative;
-}
-
-img {
-    position: absolute;
-    margin: -210px 400px 300px -150px;
-}
-
-.header1 {
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    color: rgb(61, 168, 57);
-    font-weight: 300;
-    font-size: 36px;
-    text-align: center;
-    transform: translate(-50%, -50%);
-    text-shadow: 2px 2px 4px rgb(56, 224, 49, 0.4);
-    z-index: 2;
-}
-
-.header2 {
-    position: absolute;
-    top: 35%;
-    left: 44%;
-    color: rgb(56, 207, 50);
-    font-weight: 300;
-    font-size: 36px;
-    text-align: left;
-    transform: translate(-50%, -50%);
-    text-shadow: 3px 3px 4px rgb(56, 224, 49, 0.4);
-    z-index: 2;
 }
 
 .body1 {
@@ -185,14 +162,27 @@ img {
 .account-settings h2,
 .uploaded-recipes h2 {
     margin-top: 0;
-    color: #8bc34a;
+    color: rgb(56, 207, 50);
 }
 
 /* Color variations for sections */
+.profile-info {
+    background-color: #b7e780;
+}
+
 .account-settings {
     background-color: #f9fbe7;
 }
 
 .uploaded-recipes {
     background-color: #dcedc8;
+}
+
+h1 a,
+#account-tab a,
+#search-tab a,
+#recipes-tab a,
+#auth-button a {
+    text-decoration: none;
+    color: #000;
 }

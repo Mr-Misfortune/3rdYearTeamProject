@@ -67,7 +67,11 @@ button {
 
 }
 
-#account-tab a {
+h1 a,
+#account-tab a,
+#search-tab a,
+#recipes-tab a,
+#auth-button a {
   text-decoration: none;
   color: #000;
 }

@@ -13,14 +13,14 @@
 
     <div id="app">
         <header>
-            <h1>Recipe Realm</h1>
+            <h1><a href="./index.html">Recipe Realm</a></h1>
             <div id="user-info"></div>
         </header>
 
         <nav>
             <button id="account-tab" class="button btn1">Account</button>
             <button id="recipes-tab" class="button btn1">Recipes</button>
-            <button id="search-tab" class="buttib btn1">Search</button>
+            <button id="search-tab" class="button btn1"><a href="./search-recipe.html">Search</a></button>
             <button id="auth-button" class="button btn1">Login</button>
             <button id="create-account-button" class="button btn1" style="display: none">
                 Create Account
@@ -31,14 +31,15 @@
         </nav>
 
         <main>
+            <h2 class="header1">Account Information</h2>
             <section class="profile-info">
                 <h2>Profile Information</h2>
                 <div class="user-details">
-                    <p><strong>Name:</strong> Carl Pete</p>
-                    <p><strong>Email:</strong> cpete123@gmail.com</p>
+                    <p><strong>Name:</strong> <span id="name">Carl Pete</span></p>
+                    <p><strong>Email:</strong> <span id="email">cpete123@gmail.com</span></p>
                 </div>
                 <div class="edit-profile">
-                    <button>Edit Profile</button>
+                    <button onclick="editProfile()">Edit Profile</button>
                 </div>
             </section>
 
@@ -54,7 +55,7 @@
                 <div class="recipes-list">
                     <ul>
                         <li>
-                            <a href="#">Recipe 1</a>
+                            <span>Recipe1</span>
                             <span>Edit</span>
                             <span>Delete</span>
                         </li>
@@ -87,7 +88,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
     <script type="module" src="javascript/app.js"></script>
-    <script src="javascript/homepage.js"></script>
+    <script src="javascript/account.js"></script>
 </body>
 
 </html>
