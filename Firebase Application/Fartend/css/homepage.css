@@ -18,11 +18,9 @@ body {
 }
 
 header {
-  background-image: linear-gradient(
-    to bottom left,
-    rgb(21, 126, 21),
-    rgb(134, 234, 134)
-  );
+  background-image: linear-gradient(to bottom left,
+      rgb(21, 126, 21),
+      rgb(134, 234, 134));
   padding: 10px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
@@ -67,6 +65,11 @@ button {
   cursor: pointer;
   transition-duration: 0.4s;
 
+}
+
+#account-tab a {
+  text-decoration: none;
+  color: #000;
 }
 
 .btn1 {

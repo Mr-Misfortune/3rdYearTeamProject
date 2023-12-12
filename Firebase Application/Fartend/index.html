@@ -15,20 +15,20 @@
         <div id="user-info"></div>
       </header>
 
-      <nav>
-        <button id="account-tab" class = "button btn1">Account</button>
-        <button id="recipes-tab" class = "button btn1">Recipes</button>
-        <button id="search-tab" class = "buttib btn1">Search</button>
-        <button id="auth-button" class = "button btn1">Login</button>
-        <button id="create-account-button"  class = "button btn1"style="display: none">
-          Create Account
-        </button>
-        <button id="submit-recipe-button"  class = "button btn1"style="display: none">
-          Submit Recipe
-        </button>
-      </nav>
+    <nav>
+      <button id="account-tab" class="button btn1"><a href="./account.html">Account</a></button>
+      <button id="recipes-tab" class="button btn1">Recipes</button>
+      <button id="search-tab" class="buttib btn1">Search</button>
+      <button id="auth-button" class="button btn1">Login</button>
+      <button id="create-account-button" class="button btn1" style="display: none">
+        Create Account
+      </button>
+      <button id="submit-recipe-button" class="button btn1" style="display: none">
+        Submit Recipe
+      </button>
+    </nav>
 
-        <main>
+    <main>
 
         <div id="home-page">
     
@@ -36,40 +36,50 @@
           <h4 class = "header2">Please login orcreate an account!</h4>
         </div>
 
-        <div id="account-tab-content">
-          <h2 class = "header1"><strong>Account Information</strong></h2>
-          <p id="user-email" class = "body1"></p>
-        </div>
+    <main>
 
-        <div id="recipes-tab-content">
-          <h2 class = "header1"><strong>My Recipes</strong></h2>
-          <ul id="recipe-list" class = "header2"></ul>
-        </div>
-      </main>
-    </div>
+      <div id="home-page">
 
-    <script>
-      var images = [
-        'https://images.pexels.com/photos/349610/pexels-photo-349610.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-        'https://images.pexels.com/photos/1410235/pexels-photo-1410235.jpeg?auto=compress&cs=tinysrgb&w=600',
-        'https://images.pexels.com/photos/616401/pexels-photo-616401.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-        'https://images.pexels.com/photos/1414651/pexels-photo-1414651.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-        // Add as many images as you want
-      ];
-      var i = 0;
-    
-      setInterval(function() {
-        document.body.style.backgroundImage = 'url(' + images[i] + ')';
-        i++;
-        if (i == images.length) {
-            i = 0;
-        }
-      }, 2000); // Change image every 5 seconds
-    </script>
+        <h4 class="header1"><strong>Welcome to the recipe app!</strong></h4>
+        <h4 class="header2">Please login or</br>create an account!</h4>
 
-    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
-    <script type="module" src="javascript/app.js"></script>
-    <script src="javascript/homepage.js"></script>
-  </body>
+      </div>
+
+      <div id="account-tab-content">
+        <h2 class="header1"><strong>Account Information</strong></h2>
+        <p id="user-email" class="body1"></p>
+      </div>
+
+      <div id="recipes-tab-content">
+        <h2 class="header1"><strong>My Recipes</strong></h2>
+        <ul id="recipe-list" class="header2"></ul>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    var images = [
+      'https://images.pexels.com/photos/349610/pexels-photo-349610.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      'https://images.pexels.com/photos/1410235/pexels-photo-1410235.jpeg?auto=compress&cs=tinysrgb&w=600',
+      'https://images.pexels.com/photos/616401/pexels-photo-616401.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      'https://images.pexels.com/photos/1414651/pexels-photo-1414651.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+      // Add as many images as you want
+    ];
+    var i = 0;
+
+    setInterval(function () {
+      document.body.style.backgroundImage = 'url(' + images[i] + ')';
+      i++;
+      if (i == images.length) {
+        i = 0;
+      }
+    }, 2000); // Change image every 5 seconds
+  </script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+  <script type="module" src="javascript/app.js"></script>
+  <script src="javascript/homepage.js"></script>
+</body>
+
 </html>
