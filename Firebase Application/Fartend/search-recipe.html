@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Recipe Realm</title>
+    <title>Search Recipe Realm</title>
     <link rel="stylesheet" href="css/homepage.css" />
     <link rel="icon" href="css/favicon.ico" type="image/x-icon">
   </head>
@@ -26,14 +26,36 @@
         <button id="submit-recipe-button"  class = "button btn1"style="display: none">
           Submit Recipe
         </button>
+        
       </nav>
-
         <main>
+        <div>
 
-        <div id="home-page">
-    
-          <h4 class = "header1"><strong>Welcome to the recipe app!</strong></h4>
-          <h4 class = "header2">Please login orcreate an account!</h4>
+          <h2 class="header1">Hungry? Let's see what we can find!</h2>
+          <h1 class="header2">Fill in the information below to get started.</h1>
+            <br></br>
+
+            <form id="search-form" class="header">
+                <label for="search-query">Search:</label>
+                <input type="text" id="search-query" name="search-query"/>
+
+            <br>
+            </br>
+
+                <label for="dietary-tags"> Dietary Tags:</label>
+              <select name="Tags">
+                <option></option>
+                <option value="Gluten">Gluten</option>
+                <option value="Vegan">Vegan</option>
+                <option value="Vegetarian">Vegetarian</option>
+                <option value="Dairy">Dairy</option>
+              </select>
+              <button id="submit" class="button">Submit </button>              
+              </form>
+              <br>
+
+
+
         </div>
 
         <div id="account-tab-content">
@@ -67,9 +89,8 @@
       }, 2000); // Change image every 5 seconds
     </script>
 
-    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
-    <script type="module" src="javascript/app.js"></script>
-    <script src="javascript/homepage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+<script type="module" src="javascript/search-recipes.js"></script>
   </body>
 </html>

@@ -5,6 +5,7 @@ body {
   background-size: cover;
 }
 
+
 #app {
   max-width: 750px;
   max-height: 100%;
@@ -64,12 +65,27 @@ main {
 
 button {
   cursor: pointer;
+  transition-duration: 0.4s;
+
 }
 
 .btn1 {
   width: 20%;
   border: 0;
   padding: 12px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  outline: solid #979797;
+  display: block;
+  margin: auto;
+  background: solid #ffffff;
+  z-index: 2;
+}
+
+.btn2 {
+  width: 15%;
+  border: 0;
+  padding: 7px 7px;
   border-radius: 20px;
   cursor: pointer;
   outline: solid #979797;
@@ -135,7 +151,7 @@ img {
 
 .header1 {
   position: absolute;
-  top: 25%;
+  top: 30%;
   left: 50%;
   color: rgb(61, 168, 57);
   font-weight: 300;
@@ -148,11 +164,11 @@ img {
 
 .header2 {
   position: absolute;
-  top: 35%;
-  left: 44%;
+  top: 40%;
+  left: 50%;
   color: rgb(56, 207, 50);
   font-weight: 300;
-  font-size: 36px;
+  font-size: 24px;
   text-align: left;
   transform: translate(-50%, -50%);
   text-shadow: 3px 3px 4px rgb(56, 224, 49, 0.4);
