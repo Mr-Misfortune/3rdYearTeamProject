@@ -1,6 +1,6 @@
 import { db, auth } from "./firebase.js";
 
-const button = document.getElementById("submit");
+const button = document.getElementById("searchsubmit");
 const searchResults = document.getElementById("search-results");
 button.addEventListener("click", searchRecipes);
 
@@ -38,13 +38,7 @@ function searchRecipes(event) {
 // Attach the searchRecipes function to the form's submit event
 document
   .getElementById("search-form")
-  .addEventListener("submit", searchRecipes);
-
-// Attach the searchRecipes function to the form's submit event
-document
-  .getElementById("search-form")
-  .addEventListener("submit", searchRecipes);
-
+  .addEventListener("searchsubmit", searchRecipes);
 function displayRecipes(recipes) {
   searchResults.innerHTML = "";
 
