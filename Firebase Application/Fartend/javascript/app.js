@@ -53,8 +53,10 @@ auth.onAuthStateChanged((user) => {
 
   // Update the home screen content based on the authentication state
   homeScreen.innerHTML = user
-    ? `Welcome back, ${user.displayName || user.email}!`
-    : "Welcome to the Recipe App! Log in to explore more.";
+    ? `<br><h4 class="header1">Welcome back, ${
+        user.displayName || user.email
+      }!</h4>`
+    : `<br><h4 class = "header1">Welcome to RecipeRealm! Login to explore more.</h4>`;
 });
 
 function showTab(tabId) {
