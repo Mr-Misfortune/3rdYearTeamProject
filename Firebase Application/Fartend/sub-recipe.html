@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Recipe Realm</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/sub-recipe-homepage.css">
+    <link rel="stylesheet" href="css/sub-recipe-form.css">
+
+    <link rel="icon" href="css/favicon.ico" type="image/x-icon">
+
+</head>
+<body>
+
+    <div id="app">
+        <header>
+          <h1>Recipe Realm</h1>
+          <div id="user-info"></div>
+        </header>
+
+        <nav>
+            <button id="account-tab" class = "button btn1">Account</button>
+            <button id="recipes-tab" class = "button btn1">Recipes</button>
+            <button id="search-tab" class = "button btn1">Search</button>
+            <button id="auth-button" class = "button btn1">Login</button>
+        </nav>
+
+    <div class = "submission-box">
+        <h2>Post Recipe</h2>
+
+        <form>
+            <div class="form-group row">
+                <label class="col-1"></label>
+                <div class="col-10">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <i class="fa fa-cutlery"></i>
+                      </div>
+                    </div>
+                    <input id="title" name="title" placeholder="Recipe Title" type="text" required="required" class="form-control">
+                  </div>
+                </div>
+              </div>
+            
+              <div class="form-group row">
+                <label class="col-1"></label>
+                <div class="col-5">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <i class="fa fa-balance-scale"></i>
+                      </div>
+                    </div>
+                    <input id="measurements" name="measurements" placeholder="Measurements" type="text" required="required" class="form-control">
+                  </div>
+                </div>
+                <div class="col-5">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <i class="fa fa-list-ul"></i>
+                      </div>
+                    </div>
+                    <input id="ingredients" name="ingredients" placeholder="Ingredients" type="text" required="required" class="form-control">
+                  </div>
+                </div>
+
+                <div class = "col-1">
+                  <button type="button" class="btn-add" onclick="addRow()">+</button>
+                </div>
+              </div>
+
+              <div id="ingredients-container"></div>
+ 
+            <div class="form-group row">
+              <label class="col-1"></label> 
+              <div class="col-10">
+                <h5 class = "instructions-header">Instructions</h5>
+                <textarea id="instructions" name="instructions" cols="40" rows="5" required="required" class="form-control"></textarea> 
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-1"></label> 
+              <div class="col-5">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <i class="fa fa-clock-o"></i>
+                    </div>
+                  </div> 
+                  <input id="prep-time" name="prep-time" placeholder="Prep Time" type="text" required="required" class="form-control">
+                </div>
+              </div>
+
+              <div class="col-5">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <i class="fa fa-clock-o"></i>
+                    </div>
+                  </div> 
+                  <input id="cook-time" name="cook-time" placeholder="Cook Time" type="text" required="required" class="form-control">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              
+              <label class="col-1"></label> 
+              <div class="col-10">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <i class="fa fa-user-plus"></i>
+                    </div>
+                  </div> 
+                  <input id="serves" name="serves" placeholder="Serves" type="text" required="required" class="form-control">
+                </div>
+              </div>
+            </div>  
+            
+              <div class="form-group row">
+                <label class="col-1"></label>
+                  <div class="col-10">
+                    <h5 class="instructions-header">Allergens</h5>
+                    <textarea id="allergens" name="allergens" cols="35" rows="1" required="required" class="form-control"></textarea>
+              </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="offset-2 col-10">
+                  <button name="submit" type="submit" class="btn btn-primary">Submit Recipe</button>
+                </div>
+            </div>
+          </form>
+
+    </div>
+
+    <script src="javascript/sub-recipe.js"></script>
+
+    <script>
+        var images = [
+          'https://images.pexels.com/photos/349610/pexels-photo-349610.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+          'https://images.pexels.com/photos/1410235/pexels-photo-1410235.jpeg?auto=compress&cs=tinysrgb&w=600',
+          'https://images.pexels.com/photos/616401/pexels-photo-616401.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+          'https://images.pexels.com/photos/1414651/pexels-photo-1414651.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+          // Add as many images as you want
+        ];
+        var i = 0;
+      
+        setInterval(function() {
+          document.body.style.backgroundImage = 'url(' + images[i] + ')';
+          i++;
+          if (i == images.length) {
+              i = 0;
+          }
+        }, 2000); // Change image every 5 seconds
+      </script>
+  
+      <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+      <script type="module" src="javascript/app.js"></script>
+      <script src="javascript/homepage.js"></script>
+
+      <script src="javascript/sub-received.js"></script>
+    
+</body>
+</html>

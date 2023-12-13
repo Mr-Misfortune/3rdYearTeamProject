@@ -1,0 +1,19 @@
+body{
+    font-family: "Lucida Sans";
+}
+
+.submission-received-box{
+    text-align: center;
+    max-width: 900px;
+    margin: -50px;
+    background-color: rgb(153, 207, 162);
+    border-radius: 10px;
+    padding-top: 200px;;
+    padding-bottom: 60px;
+}
+
+.logo{
+    width: 100px;
+    height: 100px;
+    padding: 80px 100px;
+}
