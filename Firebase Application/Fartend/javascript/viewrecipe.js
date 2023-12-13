@@ -37,11 +37,37 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function displayRecipeDetails(recipe) {
-  const recipeDetailsDiv = document.getElementById("recipe-details");
-  recipeDetailsDiv.innerHTML = `
-    <h2>${recipe.recipeName}</h2>
-    <p><strong>Ingredients:</strong> ${recipe.ingredients}</p>
-    <p><strong>Instructions:</strong> ${recipe.instructions}</p>
-    <!-- Add more details as needed -->
-  `;
+  // Update specific elements with recipe details
+  document.getElementById(
+    "recipeName"
+  ).textContent = `Recipe Name: ${recipe.recipeName}`;
+  document.getElementById(
+    "submittedBy"
+  ).textContent = `Submitted By: ${recipe.submittedBy}`;
+  document.getElementById(
+    "measurementContainer"
+  ).innerHTML = `<h4>Ingredients:</h4>${recipe.ingredients}`;
+  document.getElementById("instructionsBox").textContent = recipe.instructions;
+  document.getElementById(
+    "prepTime"
+  ).textContent = `Prep Time: ${recipe.prepTime}`;
+  document.getElementById(
+    "cookTime"
+  ).textContent = `Cook Time: ${recipe.cookTime}`;
+  document.getElementById(
+    "servings"
+  ).textContent = `Serves: ${recipe.servings}`;
+  document.getElementById(
+    "allergens"
+  ).textContent = `Allergens: ${recipe.allergens.join(", ")}`;
+  // Add more elements as needed
+
+  // If you want to update the entire HTML content, you can use the following:
+  // const recipeDetailsDiv = document.getElementById("recipe-details");
+  // recipeDetailsDiv.innerHTML = `
+  //   <h2>${recipe.recipeName}</h2>
+  //   <p><strong>Ingredients:</strong> ${recipe.ingredients}</p>
+  //   <p><strong>Instructions:</strong> ${recipe.instructions}</p>
+  //   <!-- Add more details as needed -->
+  // `;
 }

@@ -28,11 +28,10 @@ addRecipeButton.addEventListener("click", addRecipe);
 auth.onAuthStateChanged((user) => {
   if (user) {
     // User is signed in
-    userDisplay.innerHTML = `Welcome, ${user.displayName || user.email}!`;
     userNameDisplay.innerHTML = `Name: ${user.displayName}`;
     userEmailDisplay.innerHTML = `Email: ${user.email}`;
-    homeScreen.style.display = "none";
-    accountTabContent.style.display = "block";
+    homeScreen.style.display = "block";
+    accountTabContent.style.display = "none";
     recipesTabContent.style.display = "none";
     loadRecipes(user.uid);
     createAccountButton.style.display = "none"; // Hide the create account button when logged in

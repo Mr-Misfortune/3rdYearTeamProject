@@ -1,21 +1,75 @@
-<!-- viewrecipe.html -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>View Recipe</title>
-    <!-- Add any necessary stylesheets or scripts here -->
+    <title>viewPage</title>
+    <link rel="stylesheet" type="text/css" href="css/viewPage.css" />
   </head>
+
   <body>
-    <h1>View Recipe</h1>
-    <div id="recipe-details">
-      <!-- Display recipe details here using JavaScript -->
+    <div id="app">
+      <header>
+        <h1>Recipe Realm</h1>
+        <div id="user-info"></div>
+      </header>
+
+      <nav>
+        <button id="account-tab" class="button btn1">Account</button>
+        <button id="recipes-tab" class="button btn1">Recipes</button>
+        <button id="search-tab" class="buttib btn1">Search</button>
+        <button id="auth-button" class="button btn1">Login</button>
+        <button
+          id="create-account-button"
+          class="button btn1"
+          style="display: block"
+        >
+          Create Account
+        </button>
+        <button
+          id="submit-recipe-button"
+          class="button btn1"
+          style="display: none"
+        >
+          Submit Recipe
+        </button>
+      </nav>
+
+      <main>
+        <div class="container">
+          <div class="titleContainer">
+            <h4 id="recipeName">Recipe Name:</h4>
+            <h4 id="submittedBy">Submitted By:</h4>
+          </div>
+          <div id="measurementContainer" style="white-space: pre">
+            <h4>Ingredients:</h4>
+          </div>
+          <div>
+            <h4>Instructions:</h4>
+          </div>
+          <p id="instructionsBox" style="white-space: pre"></p>
+          <div id="timeContainer">
+            <h4 id="prepTime" class="time">Prep Time:</h4>
+            <h4 id="cookTime" class="time">Cook Time:</h4>
+            <h4 id="servings" class="time">Serves:</h4>
+          </div>
+          <div id="allergensContainer">
+            <h4 id="allergens" style="white-space: pre">Allergens:</h4>
+            <div id="AllergyList"></div>
+          </div>
+          <div id="buttonContainer">
+            <button class="buttons" id="backBtn">Back</button>
+            <button class="buttons" id="favouriteBtn">Favourite</button>
+          </div>
+        </div>
+      </main>
     </div>
-    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
     <script type="module" src="javascript/viewrecipe.js"></script>
+    <script type="module" src="javascript/app.js"></script>
+    <script src="css/viewPage.js"></script>
   </body>
 </html>
