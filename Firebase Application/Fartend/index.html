@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Recipe Realm</title>
   <link rel="stylesheet" href="css/homepage.css" />
+  <link rel="stylesheet" href="css/account.css" />
   <link rel="icon" href="css/favicon.ico" type="image/x-icon">
 </head>
 
@@ -18,9 +19,9 @@
     </header>
 
     <nav>
-      <button id="account-tab" class="button btn1"><a href="./account.html">Account</a></button>
+      <button id="account-tab" class="button btn1">Account</button>
       <button id="recipes-tab" class="button btn1">Recipes</button>
-      <button id="search-tab" class="buttib btn1">Search</button>
+      <button id="search-tab" class="button btn1">Search</button>
       <button id="auth-button" class="button btn1">Login</button>
       <button id="create-account-button" class="button btn1" style="display: none">
         Create Account
@@ -40,9 +41,23 @@
       </div>
 
       <div id="account-tab-content">
-        <br></br>
-        <h2 class="header1"><strong>Account Information</strong></h2>
-        <p id="user-email" class="body1"></p>
+        <section class="profile-info">
+          <h2>Profile Information</h2>
+          <div class="user-details">
+              <p id ="user-name"><strong>Name:</strong> Login to view more info</p>
+              <p id ="user-email"><strong>Email:</strong> Login to view more info</p>
+          </div>
+          <div class="edit-profile">
+              <button>Edit Profile</button>
+          </div>
+      </section>
+
+      <section class="account-settings">
+          <h2>Account Settings</h2>
+          <div class="password-reset">
+              <button>Change Password</button>
+          </div>
+      </section>
       </div>
 
       <div id="recipes-tab-content">

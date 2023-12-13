@@ -1,11 +1,12 @@
 import "https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js";
 import "https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js";
-import { db, auth } from "../firebase.js";
+import { db, auth } from "./firebase.js";
 
 const homeScreen = document.getElementById("home-page");
 const accountTabContent = document.getElementById("account-tab-content");
 const recipesTabContent = document.getElementById("recipes-tab-content");
-const userDisplay = document.getElementById("user-info");
+const userDisplay = document.getElementById("user-details");
+const userNameDisplay = document.getElementById("user-name");
 const userEmailDisplay = document.getElementById("user-email");
 const recipeList = document.getElementById("recipe-list");
 const authButton = document.getElementById("auth-button");
@@ -28,6 +29,7 @@ auth.onAuthStateChanged((user) => {
   if (user) {
     // User is signed in
     userDisplay.innerHTML = `Welcome, ${user.displayName || user.email}!`;
+    userNameDisplay.innerHTML = `Name: ${user.displayName}`;
     userEmailDisplay.innerHTML = `Email: ${user.email}`;
     homeScreen.style.display = "none";
     accountTabContent.style.display = "block";
