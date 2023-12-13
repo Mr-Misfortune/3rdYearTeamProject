@@ -5,7 +5,6 @@ body {
   background-size: cover;
 }
 
-
 #app {
   max-width: 750px;
   max-height: 100%;
@@ -18,9 +17,11 @@ body {
 }
 
 header {
-  background-image: linear-gradient(to bottom left,
-      rgb(21, 126, 21),
-      rgb(134, 234, 134));
+  background-image: linear-gradient(
+    to bottom left,
+    rgb(21, 126, 21),
+    rgb(134, 234, 134)
+  );
   padding: 10px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
@@ -28,7 +29,6 @@ header {
   outline-width: 1px;
   outline-color: #979797;
   text-align: center;
-
 }
 
 nav {
@@ -39,7 +39,6 @@ nav {
   outline-style: inset;
   outline-width: 1px;
   outline-color: #979797;
-
 }
 
 main {
@@ -64,7 +63,6 @@ main {
 button {
   cursor: pointer;
   transition-duration: 0.4s;
-
 }
 
 h1 a,

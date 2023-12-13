@@ -5,6 +5,7 @@ import { db, auth } from "../firebase.js";
 const homeScreen = document.getElementById("home-page");
 const accountTabContent = document.getElementById("account-tab-content");
 const recipesTabContent = document.getElementById("recipes-tab-content");
+const searchTabContent = document.getElementById("search-tab-content");
 const userDisplay = document.getElementById("user-info");
 const userEmailDisplay = document.getElementById("user-email");
 const recipeList = document.getElementById("recipe-list");
@@ -18,9 +19,11 @@ const accountTab = document.getElementById("account-tab");
 const recipesTab = document.getElementById("recipes-tab");
 accountTab.addEventListener("click", () => showTab("account-tab-content"));
 recipesTab.addEventListener("click", () => showTab("recipes-tab-content"));
+searchRecipesButton.addEventListener("click", () =>
+  showTab("search-tab-content")
+);
 authButton.addEventListener("click", handleAuthAction);
 createAccountButton.addEventListener("click", createAccount);
-searchRecipesButton.addEventListener("click", searchRecipes);
 //dietaryTagsFilter.addEventListener("change", updateRecipes);
 addRecipeButton.addEventListener("click", addRecipe);
 
@@ -29,9 +32,10 @@ auth.onAuthStateChanged((user) => {
     // User is signed in
     userDisplay.innerHTML = `Welcome, ${user.displayName || user.email}!`;
     userEmailDisplay.innerHTML = `Email: ${user.email}`;
-    homeScreen.style.display = "none";
-    accountTabContent.style.display = "block";
+    homeScreen.style.display = "block";
+    accountTabContent.style.display = "none";
     recipesTabContent.style.display = "none";
+    searchTabContent.style.display = "none";
     loadRecipes(user.uid);
     createAccountButton.style.display = "none"; // Hide the create account button when logged in
     addRecipeButton.style.display = "block"; // Show the add recipe button when logged in
@@ -42,6 +46,7 @@ auth.onAuthStateChanged((user) => {
     homeScreen.style.display = "block";
     accountTabContent.style.display = "none";
     recipesTabContent.style.display = "none";
+    searchTabContent.style.display = "none";
     recipeList.innerHTML = "";
     createAccountButton.style.display = "block"; // Show the create account button when logged out
     addRecipeButton.style.display = "none"; // Hide the add recipe button when logged in
@@ -60,6 +65,7 @@ function showTab(tabId) {
   homeScreen.style.display = "none";
   accountTabContent.style.display = "none";
   recipesTabContent.style.display = "none";
+  searchTabContent.style.display = "none";
 
   document.getElementById(tabId).style.display = "block";
 }
@@ -104,7 +110,4 @@ function loadRecipes(userId) {
     .catch((error) => {
       console.error("Error loading recipes:", error);
     });
-}
-function searchRecipes() {
-  window.location.href = "search-recipes.html";
 }
