@@ -99,7 +99,7 @@ function displayRecipeDetails(recipe) {
   document.getElementById("servings").textContent = `Serves: ${recipe.serves}`;
   document.getElementById(
     "allergens"
-  ).textContent = `Allergens: ${recipe.dietaryTags.join(", ")}`;
+  ).textContent = `Dietary Info: ${recipe.dietaryTags.join(", ")}`;
   // Add more elements as needed
 }
 
