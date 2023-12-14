@@ -67,7 +67,7 @@ nav {
 main {
   background-color: #eee;
   height: 800px;
-
+  overflow: auto;
   margin: 0 auto;
   outline-style: inset;
   outline-width: 1px;
