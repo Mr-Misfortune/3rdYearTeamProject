@@ -1,7 +1,10 @@
 import { db, auth } from "./firebase.js";
+function redirectToIndex() {
+  window.location.href = "index.html";
+}
 
 document
-  .getElementById("create-account-form")
+  .getElementById("login-form")
   .addEventListener("submit", function (event) {
     event.preventDefault();
 

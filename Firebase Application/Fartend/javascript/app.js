@@ -59,7 +59,7 @@ auth.onAuthStateChanged((user) => {
     ? `<br><h4 class="header1">Welcome back, ${
         user.displayName || user.email
       }!</h4>`
-    : `<br><h4 class = "header1">Welcome to RecipeRealm! Login to explore more.</h4>`;
+    : `<br><h4 class = "header1">Welcome to RecipeRealm! <br> Login to explore more.</h4>`;
 });
 
 function showTab(tabId) {
