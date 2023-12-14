@@ -33,13 +33,13 @@
         
 
           <label for="dietary-tags"> Dietary Tags:</label>
-          <select name="Tags">
-            <option></option>
-            <option value="Gluten">Gluten Free</option>
-            <option value="Vegan">Vegan</option>
-            <option value="Vegetarian">Vegetarian</option>
-            <option value="Dairy">Dairy Free</option>
-          </select>
+          <fieldset>
+            <label><input type="checkbox" name="Tags" value="Gluten"> Gluten Free</label>
+            <label><input type="checkbox" name="Tags" value="Vegan"> Vegan</label>
+            <label><input type="checkbox" name="Tags" value="Vegetarian"> Vegetarian</label>
+            <label><input type="checkbox" name="Tags" value="Dairy"> Dairy Free</label>
+          </fieldset>
+          
           <button id="submit" class="button">Submit </button>
         </form>
         <br>

@@ -1,19 +1,18 @@
 body {
-  font-family: "Lucida Sans";
-  background-repeat: no-repeat;
-  background-size: cover;
-  overflow: auto;
+  font-family: "Lucida Sans" !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
 }
 
 #app {
-  max-width: 750px;
-  max-height: 100%;
-  margin: 0 auto;
+  max-width: 750px !important;
+  max-height: 100% !important;
+  margin: 10px auto !important;
 }
 
 #background {
-  max-width: 800px;
-  background-color: white;
+  max-width: 800px !important;
+  background-color: white !important;
 }
 
 header {
@@ -22,63 +21,64 @@ header {
     rgb(21, 126, 21),
     rgb(134, 234, 134)
   );
-  padding: 10px;
+  padding: 25px !important;
   border-top-left-radius: 15px !important;
   border-top-right-radius: 15px !important;
   border-bottom-left-radius: 15px !important;
   border-bottom-right-radius: 15px !important;
-  outline-style: inset;
-  outline-width: 1px;
-  outline-color: #979797;
-  text-align: center;
+  outline-style: inset !important;
+  outline-width: 1px !important;
+  outline-color: #979797 !important;
+  text-align: center !important;
 }
 header:hover {
-  background-image: linear-gradient(
-    to bottom right,
-    rgb(21, 126, 21),
-    rgb(134, 234, 134)
-  );
   transform: scale(1.05);
 }
 
 nav {
-  display: flex;
-  justify-content: space-around;
-  background-color: #eee;
-  padding: 10px;
-  outline-style: inset;
-  outline-width: 1px;
-  outline-color: #979797;
+  display: flex !important;
+  justify-content: space-around !important;
+  background-color: #eee !important;
+  padding: 10px !important;
+  outline-style: inset !important;
+  outline-width: 1px !important;
+  outline-color: #979797 !important;
 }
 
 main {
-  background-color: #eee;
-  height: 800px;
-  outline-style: inset;
-  outline-width: 1px;
-  outline-color: #979797;
+  padding: 150px !important;
+  background-color: #eee !important;
+  height: 900px !important;
+  outline-style: inset !important;
+  outline-width: 1px !important;
+  outline-color: #979797 !important;
+}
+
+#account-tab-content,
+#recipes-tab-content {
+  display: none !important;
 }
 
 #recipe-list {
-  list-style-type: none;
-  padding: 0;
+  list-style-type: none !important;
+  padding: 0 !important;
 }
 
 button {
-  cursor: pointer;
+  cursor: pointer !important;
 }
 
 .btn1 {
-  width: 20%;
-  border: 0;
-  padding: 12px 20px;
-  border-radius: 20px;
-  cursor: pointer;
-  outline: solid #979797;
-  display: block;
-  margin: auto;
-  background: solid #ffffff;
-  z-index: 2;
+  width: 20% !important;
+  border: 0 !important;
+  padding: 8px 20px !important;
+  border-radius: 20px !important;
+  cursor: pointer !important;
+  outline: solid #979797 !important;
+  display: block !important;
+  margin: auto !important;
+  background-color: solid #ffffff !important;
+  z-index: 2 !important;
 }
 
 .button :hover {
@@ -172,48 +172,4 @@ img {
   transform: translate(-50%, -50%);
   text-shadow: 3px 3px 4px rgb(56, 224, 49, 0.4);
   z-index: 2;
-}
-.container {
-  font-size: 20px;
-  margin: 0;
-  padding: 30px;
-  overflow: auto;
-  max-height: 800px;
-}
-.titleContainer {
-  display: flex;
-  justify-content: space-between;
-}
-#recipeName {
-  font-weight: 600;
-}
-#instructionsBox {
-  display: flex;
-  word-wrap: break-word;
-  white-space: pre-wrap;
-  padding: 0px;
-  flex-direction: column;
-}
-#timeContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-#allergensContainer {
-  padding-bottom: 20px;
-}
-.time {
-  padding: 0;
-  margin: 0;
-}
-#buttonContainer {
-  display: flex;
-  justify-content: space-between;
-}
-.buttons {
-  border-radius: 10px;
-  padding: 10px;
-  border: 2px solid black;
-  font-size: 22px;
-  font-weight: 550;
 }

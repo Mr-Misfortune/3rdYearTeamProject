@@ -17,13 +17,20 @@ const checkIfInternalIDExists = async (internalID) => {
     throw error; // Rethrow the error to handle it in the calling code
   }
 };
+document.getElementById("homebutton").addEventListener("click", () => {
+  window.location.href = "index.html";
+});
 
 recipeForm.addEventListener("submit", async (event) => {
   event.preventDefault();
 
-  const recipeName = document.getElementById("recipe-name").value;
+  const recipeName = document.getElementById("recipe-title").value;
   const ingredients = document.getElementById("ingredients").value;
   const instructions = document.getElementById("instructions").value;
+
+  const preptime = document.getElementById("prep-time").value;
+  const cooktime = document.getElementById("cook-time").value;
+  const serves = document.getElementById("serves").value;
   const dietaryTagsSelect = document.getElementById("dietary-tags");
   const dietaryTags = Array.from(dietaryTagsSelect.selectedOptions).map(
     (option) => option.value
@@ -44,10 +51,14 @@ recipeForm.addEventListener("submit", async (event) => {
         // Add to the general "Recipes" collection
         const generalRecipeRef = await generalRecipesCollection.add({
           userId: user.uid,
+          username: user.displayName || user.email,
           internalID,
           recipeName,
           ingredients,
           instructions,
+          preptime,
+          cooktime,
+          serves,
           dietaryTags,
         });
 

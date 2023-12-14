@@ -1,0 +1,98 @@
+.submission-box{
+    background-color: #fff;
+    box-shadow: 0px 0px 20px rgba(27, 206, 33, 0.5);
+    margin: 0px auto 0;
+    width: 750;
+    height: 100%;
+    padding: 10px;
+}
+
+.submission-box h2{
+    color: #9be151;
+    text-align: center;
+    font-size: 30px;
+    padding: 8px;
+}
+
+.input-group{
+    margin-bottom: 8px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding: 5px 0;
+}
+
+.submission-box h4{
+    color: #9be151; 
+    text-align: center;
+    font-size: 30px;
+    padding: 8px;
+}
+
+.instructions-header {
+    color: #9be151;
+  }
+
+.input-group input:focus {
+    border: 2px solid #92cc54;
+    box-shadow: 0 0 3px 2px #9ae24c80;
+}
+
+.input-group .input-group-text ,i :focus {
+    background-color: #9ae24c80;
+    color: #fff;
+    border: none;
+    border-right: 2px solid #92cc54;
+}
+
+#instructions:focus {
+    border-color: #92cc54;
+    box-shadow: 0 0 3px 2px #9ae24c80;
+}
+
+#instructions:focus {
+    color: #0f0e0e;
+    border: none;
+    background-color: #fff; 
+}
+
+#allergens:focus {
+    border-color: #92cc54;
+    box-shadow: 0 0 3px 2px #9ae24c80;
+}
+
+#allergens:focus {
+    background-color: #fff; 
+    color: #0f0e0e;
+}
+
+div.form-group button.btn{
+    background-color: rgb(21, 126, 21);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin-top: -8px; 
+    margin-left: 170px; 
+    border: none;
+}
+
+div.form-group button.btn-add{
+    background-color: rgb(21, 126, 21);
+    color: white;
+    padding: 6px 15px;
+    border-radius: 4px; 
+    margin-top: 5px;
+    margin-left: -8px; 
+    border: none;
+}
+
+.btn-delete{
+    background-color: rgb(234, 48, 48);
+    color: white;
+    padding: 6px 15px;
+    border-radius: 4px; 
+    margin-top: 5px;
+    margin-left: -8px; 
+    border: none;
+}

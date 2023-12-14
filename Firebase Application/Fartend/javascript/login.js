@@ -1,8 +1,4 @@
 // login.js
-function redirectToIndex() {
-  window.location.href = "index.html";
-}
-
 document
   .getElementById("login-form")
   .addEventListener("submit", function (event) {

@@ -91,7 +91,7 @@ function createAccount() {
 
 function addRecipe() {
   // Redirect to the add recipe page
-  window.location.href = "submit-recipe.html";
+  window.location.href = "sub-recipe.html";
 }
 
 // ... (Your existing JavaScript code) ...
