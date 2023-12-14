@@ -3,16 +3,29 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  font-size: 20px;
+  margin: auto;
+  padding: 30px;
+  overflow: auto;
+  max-height: 800px;
 }
 
 #app {
-  max-width: 750px;
+  max-width: 1250px;
   max-height: 100%;
   margin: 0 auto;
 }
 
 #background {
-  max-width: 800px;
+  max-width: 1250px;
   background-color: white;
 }
 
@@ -45,7 +58,7 @@ nav {
   display: flex;
   justify-content: space-around;
   background-color: #eee;
-  padding: 10px;
+
   outline-style: inset;
   outline-width: 1px;
   outline-color: #979797;
@@ -54,6 +67,8 @@ nav {
 main {
   background-color: #eee;
   height: 800px;
+
+  margin: 0 auto;
   outline-style: inset;
   outline-width: 1px;
   outline-color: #979797;
@@ -162,9 +177,9 @@ img {
 }
 
 .body1 {
-  position: absolute;
-  top: 35%;
-  left: 44%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: rgb(56, 207, 50);
   font-weight: 300;
   font-size: 24px;

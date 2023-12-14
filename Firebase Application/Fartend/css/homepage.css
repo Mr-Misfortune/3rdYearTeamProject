@@ -52,9 +52,9 @@ nav {
 }
 
 main {
-  padding: 150px;
+  padding: 10px;
   background-color: #eee;
-  height: 500px;
+  height: 750px;
   outline-style: inset;
   outline-width: 1px;
   outline-color: #979797;
@@ -80,6 +80,7 @@ button {
 }
 
 .btn1 {
+  transform: scale(0.9);
   width: 20%;
   border: 0;
   padding: 12px 20px;
@@ -95,6 +96,14 @@ button {
 .button :hover {
   background-color: rgb(86, 153, 86);
   color: white;
+}
+.btn1:hover {
+  background: linear-gradient(
+    to bottom left,
+    rgb(21, 126, 21),
+    rgb(134, 234, 134)
+  );
+  transform: scale(1);
 }
 
 .display-left,
@@ -216,6 +225,8 @@ img {
 #searchResults {
   display: none;
   margin-top: 20px;
+  max-height: 300px; /* Set a fixed maximum height for the scrollable container */
+  overflow-y: auto; /* Add a vertical scrollbar when content exceeds the height */
 }
 
 #searchResults div {
@@ -239,4 +250,104 @@ img {
 #searchResults p {
   margin: 5px 0;
   color: #777;
+}
+
+.account-btn {
+  width: 80%;
+  border: 0;
+  padding: 12px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  outline: none;
+  display: block;
+  margin: auto;
+  background: linear-gradient(
+    to bottom left,
+    rgb(21, 126, 21),
+    rgb(134, 234, 134)
+  );
+}
+.account-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Add the following styles for the search box and fieldset */
+form {
+  text-align: center;
+}
+
+#search-form {
+  margin-top: 20px;
+}
+
+#search-query {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+fieldset {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  margin: 0 auto; /* Add this line to center the fieldset */
+  background: grey;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+button#submit {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button#submit:hover {
+  background-color: #45a049;
+}
+
+.header12 {
+  position: absolute;
+  top: 15%; /* Adjust this value to bring the header up or down */
+  left: 50%;
+  color: rgb(61, 168, 57);
+  font-weight: 300;
+  font-size: 36px;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  text-shadow: 2px 2px 4px rgb(56, 224, 49, 0.4);
+  z-index: 2;
+}
+
+.header24 {
+  position: absolute;
+  top: 25%; /* Adjust this value */
+  left: 44%;
+  color: rgb(56, 207, 50);
+  font-weight: 300;
+  font-size: 36px;
+  text-align: left;
+  transform: translate(-50%, -50%);
+  text-shadow: 3px 3px 4px rgb(56, 224, 49, 0.4);
+  z-index: 2;
+}
+
+#search-container {
+  margin-top: 20px;
 }

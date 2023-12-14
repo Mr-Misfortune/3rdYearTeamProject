@@ -48,15 +48,19 @@
               <p id ="user-email"><strong>Email:</strong> Login to view more info</p>
           </div>
           <div class="edit-profile">
-              <button>Edit Profile</button>
+              <button class = "account-btn">Edit Profile</button>
           </div>
       </section>
   
       <section class="account-settings">
           <h2>Account Settings</h2>
           <div class="password-reset">
-              <button>Change Password</button>
+              <button class = "account-btn"  id="resetButton">Change Password</button>
           </div>
+          <br>
+          <div class="account-delete">
+            <button class = "account-btn" id="deleteButton">Delete Account</button>
+        </div>
       </section>
  </div>    
 
@@ -69,6 +73,7 @@
   <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
   <script type="module" src="javascript/app.js"></script>
+  <script type="module" src="javascript/account.js"></script>
 </body>
 
 </html>

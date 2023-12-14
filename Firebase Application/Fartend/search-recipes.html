@@ -17,21 +17,17 @@
       <div id="user-info"></div>
     </header>
 
-    
-    <main>
-      <div>
-
-        <h2 class="header">Hungry? Let's see what we can find!</h2>
-        <h1 class="header">Fill in the information below to get started.</h1>
-        <br>
-
+    <h2 id="header12">Hungry? Let's see what we can find!</h2>
+        <h1 id="header24">Fill in the information below to get started.</h1>
+    <main>  
+      <div class="search-container">
         <form id="search-form" class="header">
           <label for="search-query">Search:</label>
           <input type="text" id="search-query" name="search-query" />
 
           <br>
         
-
+        <br>  
           <label for="dietary-tags"> Dietary Tags:</label>
           <fieldset>
             <label><input type="checkbox" name="Tags" value="Gluten"> Gluten Free</label>
@@ -39,8 +35,8 @@
             <label><input type="checkbox" name="Tags" value="Vegetarian"> Vegetarian</label>
             <label><input type="checkbox" name="Tags" value="Dairy"> Dairy Free</label>
           </fieldset>
-          
-          <button id="submit" class="button">Submit </button>
+          <br>
+          <button id="submit" class="account-btn">Submit </button>
         </form>
         <br>
         <div id="searchResults"></div>
