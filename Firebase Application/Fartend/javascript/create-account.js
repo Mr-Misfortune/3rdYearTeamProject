@@ -21,7 +21,7 @@ document
       .then(() => {
         alert("Account created successfully!");
         // Redirect after account creation and profile update
-        window.location.href = "https://example.com/redirect-page";
+        window.location.href = "./login.html";
       })
       .catch((error) => {
         console.error("Account creation error:", error.message);
