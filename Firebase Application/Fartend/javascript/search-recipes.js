@@ -39,6 +39,8 @@ document
   .getElementById("search-form")
   .addEventListener("submit", searchRecipes);
 
+// ... (Your existing code)
+
 function displayRecipes(recipes) {
   searchResults.innerHTML = "";
 
@@ -51,6 +53,8 @@ function displayRecipes(recipes) {
     // Display the matching recipes
     recipes.forEach((recipe) => {
       const recipeDiv = document.createElement("div");
+      recipeDiv.classList.add("recipe-item"); // Add the CSS class
+
       recipeDiv.innerHTML = `
           <h3>${recipe.recipeName}</h3>
         `;
@@ -66,6 +70,8 @@ function displayRecipes(recipes) {
 
   searchResults.style.display = "block";
 }
+
+// ... (Your existing code)
 
 function openViewRecipePage(internalID) {
   // Redirect to the viewrecipe page with the internalID as a parameter
