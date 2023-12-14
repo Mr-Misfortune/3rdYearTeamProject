@@ -71,3 +71,6 @@ function displayRecipeDetails(recipe) {
   //   <!-- Add more details as needed -->
   // `;
 }
+document.getElementById("homebutton").addEventListener("click", () => {
+  window.location.href = "index.html";
+});

@@ -12,37 +12,25 @@
 <body>
 
   <div id="app">
-    <header>
-      <h1><a href="./index.html">Recipe Realm</a></h1>
+    <header id = "homebutton">
+      <h1>Recipe Realm</h1>
       <div id="user-info"></div>
     </header>
 
-    <nav>
-      <button id="account-tab" class="button btn1"><a href="./account.html">Account</a></button>
-      <button id="recipes-tab" class="button btn1">Recipes</button>
-      <button id="search-tab" class="button btn1">Search</button>
-      <button id="auth-button" class="button btn1">Login</button>
-      <button id="create-account-button" class="button btn1" style="display: block">
-        Create Account
-      </button>
-      <button id="submit-recipe-button" class="button btn1" style="display: none">
-        Submit Recipe
-      </button>
-
-    </nav>
+    
     <main>
       <div>
 
         <h2 class="header">Hungry? Let's see what we can find!</h2>
         <h1 class="header">Fill in the information below to get started.</h1>
-        <br></br>
+        <br>
 
         <form id="search-form" class="header">
           <label for="search-query">Search:</label>
           <input type="text" id="search-query" name="search-query" />
 
           <br>
-          </br>
+        
 
           <label for="dietary-tags"> Dietary Tags:</label>
           <select name="Tags">
@@ -55,28 +43,9 @@
           <button id="submit" class="button">Submit </button>
         </form>
         <br>
-
-
-
-      </div>
-      
-      <div id="home-page">
-
-        <h4 class="header1"><strong>Welcome to the recipe app!</strong></h4>
-        <h4 class="header2">Please login or</br>create an account!</h4>
-
-      </div>
-      <div id="account-tab-content">
-        <h2 class="header1"><strong>Account Information</strong></h2>
-        <p id="user-email" class="body1"></p>
-      </div>
-
-      <div id="recipes-tab-content">
-        <h2 class="header1"><strong>My Recipes</strong></h2>
-        <ul id="recipe-list" class="header2"></ul>
-      </div>
-    </main>
-  </div>
+        <div id="searchResults"></div>
+</div>
+     
 
   <script>
     var images = [
@@ -101,7 +70,7 @@
   <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
   <script type="module" src="javascript/search-recipes.js"></script>
-  <script type="module" src="javascript/app.js"></script>
+  
 </body>
 
 </html>

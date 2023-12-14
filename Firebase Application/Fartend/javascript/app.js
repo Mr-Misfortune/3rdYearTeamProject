@@ -14,6 +14,9 @@ const createAccountButton = document.getElementById("create-account-button");
 const searchRecipesButton = document.getElementById("search-tab");
 //const dietaryTagsFilter = document.getElementById("dietary-tags-filter");
 const addRecipeButton = document.getElementById("submit-recipe-button");
+document.getElementById("homebutton").addEventListener("click", () => {
+  window.location.href = "index.html";
+});
 
 const accountTab = document.getElementById("account-tab");
 const recipesTab = document.getElementById("recipes-tab");

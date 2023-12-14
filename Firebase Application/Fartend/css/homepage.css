@@ -30,6 +30,14 @@ header {
   outline-color: #979797;
   text-align: center;
 }
+header:hover {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(21, 126, 21),
+    rgb(134, 234, 134)
+  );
+  transform: scale(1.05);
+}
 
 nav {
   display: flex;
@@ -78,7 +86,7 @@ button {
   outline: solid #979797;
   display: block;
   margin: auto;
-  background: solid #ffffff;
+  background: #ffffff;
   z-index: 2;
 }
 
@@ -200,4 +208,22 @@ img {
 }
 #recipes-tab-content {
   margin-top: 20px; /* Increase or decrease the margin-top to move the header down */
+}
+html {
+  color: rgba(255, 255, 255, 0.486); /* White with 50% transparency */
+}
+
+#background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  transition: opacity 1s ease; /* Adjust the duration and easing as needed */
+  z-index: -1;
+}
+#app {
+  margin: 0;
+  overflow: hidden;
 }

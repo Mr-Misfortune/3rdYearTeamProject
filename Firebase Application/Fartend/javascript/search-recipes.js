@@ -1,7 +1,7 @@
 import { db } from "./firebase.js";
 
 const button = document.getElementById("submit");
-const searchResults = document.getElementById("search-results");
+const searchResults = document.getElementById("searchResults");
 button.addEventListener("click", searchRecipes);
 
 function searchRecipes(event) {
@@ -34,12 +34,6 @@ function searchRecipes(event) {
       console.error("Error getting recipes:", error);
     });
 }
-
-// Attach the searchRecipes function to the form's submit event
-document
-  .getElementById("search-form")
-  .addEventListener("submit", searchRecipes);
-
 // Attach the searchRecipes function to the form's submit event
 document
   .getElementById("search-form")
@@ -77,3 +71,7 @@ function openViewRecipePage(internalID) {
   // Redirect to the viewrecipe page with the internalID as a parameter
   window.location.href = `viewrecipe.html?internalID=${internalID}`;
 }
+
+document.getElementById("homebutton").addEventListener("click", () => {
+  window.location.href = "index.html";
+});
