@@ -45,7 +45,7 @@ function displayRecipeDetails(recipe) {
     "submittedBy"
   ).textContent = `Submitted By: ${recipe.username}`;
   document.getElementById(
-    "measurementContainer"
+    "ingredientsContainer"
   ).innerHTML = `<h4>Ingredients:</h4>${recipe.ingredients}`;
   document.getElementById("instructionsBox").textContent = recipe.instructions;
   document.getElementById(
