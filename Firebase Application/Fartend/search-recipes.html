@@ -1,21 +1,53 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Search Recipe Realm</title>
-    <link rel="icon" href="css/favicon.ico" type="image/x-icon" />
-  </head>
-  <body>
-    <h1>Search Recipes</h1>
-    <form id="search-form">
-      <label for="search-query">Search:</label>
-      <input type="text" id="search-query" name="search-query" />
-      <button id="submit">Search</button>
-    </form>
-    <br />
-    <div id="search-results"></div>
+<html lang="en">
 
-    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
-    <script type="module" src="javascript/search-recipes.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search Recipe Realm</title>
+  <link rel="stylesheet" href="css/homepage.css" />
+  <link rel="icon" href="css/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+  <div id="app">
+    <header id = "homebutton">
+      <h1>Recipe Realm</h1>
+      <div id="user-info"></div>
+    </header>
+
+    
+    <main>  <h2 id="header12">Hungry? Let's see what we can find!</h2>
+        <h1 id="header24">Fill in the information below to get started.</h1>
+      <div class="search-container">
+        <form id="search-form" class="header">
+          <label for="search-query">Search:</label>
+          <input type="text" id="search-query" name="search-query" />
+
+          <br>
+        
+        <br>  
+          <label for="dietary-tags"> Dietary Tags:</label>
+          <fieldset>
+            <label><input type="checkbox" name="Tags" value="Gluten"> Gluten Free</label>
+            <label><input type="checkbox" name="Tags" value="Vegan"> Vegan</label>
+            <label><input type="checkbox" name="Tags" value="Vegetarian"> Vegetarian</label>
+            <label><input type="checkbox" name="Tags" value="Dairy"> Dairy Free</label>
+          </fieldset>
+          <br>
+          <button id="submit" class="account-btn">Submit </button>
+        </form>
+        <br>
+        <div id="searchResults"></div>
+</div>
+     
+  <script src = "javascript/background.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+  <script type="module" src="javascript/search-recipes.js"></script>
+  
+</body>
+
 </html>

@@ -1,4 +1,5 @@
 // login.js
+import { app } from "./firebase.js";
 document
   .getElementById("login-form")
   .addEventListener("submit", function (event) {
@@ -18,3 +19,8 @@ document
         alert("Login failed. Please check your email and password.");
       });
   });
+
+document.addEventListener("button", function (event) {
+  event.preventDefault();
+  window.location.href = "index.html";
+});

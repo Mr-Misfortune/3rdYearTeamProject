@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>viewPage</title>
+    <link rel="stylesheet" type="text/css" href="css/viewPage.css" />
+  </head>
+
+  <body>
+    <div id="app">
+      <header>
+        <h1 id="homebutton">Recipe Realm</h1>
+        <div id="user-info"></div>
+      </header>
+
+      <main>
+        <div class="container">
+          <div class="titleContainer">
+            <h4 id="recipeName">Recipe Name:</h4>
+          </div>
+          <h4 id="submittedBy">Submitted By:</h4>
+          <div id="ingredientsContainer" style="white-space: pre">
+            <h4>Ingredients:</h4>
+          </div>
+          <div>
+            <h4>Instructions:</h4>
+          </div>
+          <p id="instructionsBox" style="white-space: pre"></p>
+          <div id="timeContainer">
+            <h4 id="prepTime" class="time">Prep Time:</h4>
+            <h4 id="cookTime" class="time">Cook Time:</h4>
+            <h4 id="servings" class="time">Serves:</h4>
+          </div>
+          <div id="allergensContainer">
+            <h4 id="allergens" style="white-space: pre">Dietary Tags:</h4>
+            <div id="AllergyList"></div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="javascript/background.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+    <script type="module" src="javascript/viewrecipe.js"></script>
+    <script src="css/viewPage.js"></script>
+  </body>
+</html>

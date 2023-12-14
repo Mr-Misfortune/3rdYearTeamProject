@@ -23,12 +23,22 @@ header {
     rgb(134, 234, 134)
   );
   padding: 10px;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+  border-top-left-radius: 15px !important;
+  border-top-right-radius: 15px !important;
+  border-bottom-left-radius: 15px !important;
+  border-bottom-right-radius: 15px !important;
   outline-style: inset;
   outline-width: 1px;
   outline-color: #979797;
   text-align: center;
+}
+header:hover {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(21, 126, 21),
+    rgb(134, 234, 134)
+  );
+  transform: scale(1.05);
 }
 
 nav {
@@ -42,9 +52,9 @@ nav {
 }
 
 main {
-  padding: 150px;
+  padding: 10px;
   background-color: #eee;
-  height: 500px;
+  height: 750px;
   outline-style: inset;
   outline-width: 1px;
   outline-color: #979797;
@@ -70,6 +80,7 @@ button {
 }
 
 .btn1 {
+  transform: scale(0.9);
   width: 20%;
   border: 0;
   padding: 12px 20px;
@@ -78,13 +89,21 @@ button {
   outline: solid #979797;
   display: block;
   margin: auto;
-  background: solid #ffffff;
+  background: #ffffff;
   z-index: 2;
 }
 
 .button :hover {
   background-color: rgb(86, 153, 86);
   color: white;
+}
+.btn1:hover {
+  background: linear-gradient(
+    to bottom left,
+    rgb(21, 126, 21),
+    rgb(134, 234, 134)
+  );
+  transform: scale(1);
 }
 
 .display-left,
@@ -173,4 +192,162 @@ img {
   transform: translate(-50%, -50%);
   text-shadow: 3px 3px 4px rgb(56, 224, 49, 0.4);
   z-index: 2;
+}
+
+.recipe-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1px; /* Adjust the gap between buttons */
+  margin-top: 1px; /* Add or adjust the margin-top to reduce the gap between header and buttons */
+}
+
+.recipe-button {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 15px; /* Increase border-radius for a rounder look */
+  padding: 20px; /* Increase padding for larger buttons */
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  width: 150px; /* Set a fixed width for consistency */
+  box-sizing: border-box; /* Include padding and border in the total width */
+}
+
+.recipe-button:hover {
+  background-color: #f2f2f2;
+  transform: scale(1.05);
+}
+#recipes-tab-content {
+  margin-top: 20px; /* Increase or decrease the margin-top to move the header down */
+}
+
+/*these styles are for search results*/
+#searchResults {
+  display: none;
+  margin-top: 20px;
+  max-height: 300px; /* Set a fixed maximum height for the scrollable container */
+  overflow-y: auto; /* Add a vertical scrollbar when content exceeds the height */
+}
+
+#searchResults div {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#searchResults div:hover {
+  background-color: #e0e0e0;
+}
+
+#searchResults h3 {
+  margin: 0;
+  color: #333;
+}
+
+#searchResults p {
+  margin: 5px 0;
+  color: #777;
+}
+
+.account-btn {
+  width: 80%;
+  border: 0;
+  padding: 12px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  outline: none;
+  display: block;
+  margin: auto;
+  background: linear-gradient(
+    to bottom left,
+    rgb(21, 126, 21),
+    rgb(134, 234, 134)
+  );
+}
+.account-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Add the following styles for the search box and fieldset */
+form {
+  text-align: center;
+}
+
+#search-form {
+  margin-top: 20px;
+}
+
+#search-query {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+fieldset {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  margin: 0 auto; /* Add this line to center the fieldset */
+  background: grey;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+button#submit {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button#submit:hover {
+  background-color: #45a049;
+}
+
+.header12 {
+  position: absolute;
+  top: 15%; /* Adjust this value to bring the header up or down */
+  left: 50%;
+  color: rgb(61, 168, 57);
+  font-weight: 300;
+  font-size: 36px;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  text-shadow: 2px 2px 4px rgb(56, 224, 49, 0.4);
+  z-index: 2;
+}
+
+.header24 {
+  position: absolute;
+  top: 25%; /* Adjust this value */
+  left: 44%;
+  color: rgb(56, 207, 50);
+  font-weight: 300;
+  font-size: 36px;
+  text-align: left;
+  transform: translate(-50%, -50%);
+  text-shadow: 3px 3px 4px rgb(56, 224, 49, 0.4);
+  z-index: 2;
+}
+
+#search-container {
+  margin-top: 20px;
 }

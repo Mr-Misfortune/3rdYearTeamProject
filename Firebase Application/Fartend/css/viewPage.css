@@ -1,15 +1,34 @@
-/* styles.css */
 body {
   font-family: "Lucida Sans";
   background-repeat: no-repeat;
   background-size: cover;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  font-size: 20px;
+  margin: auto;
+  padding: 30px;
+  overflow: auto;
+  max-height: 800px;
 }
 
 #app {
-  max-width: 750px;
+  max-width: 1250px;
   max-height: 100%;
   margin: 0 auto;
 }
+
+#background {
+  max-width: 1250px;
+  background-color: white;
+}
+
 header {
   background-image: linear-gradient(
     to bottom left,
@@ -26,29 +45,33 @@ header {
   outline-color: #979797;
   text-align: center;
 }
+header:hover {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(21, 126, 21),
+    rgb(134, 234, 134)
+  );
+  transform: scale(1.05);
+}
 
 nav {
   display: flex;
   justify-content: space-around;
   background-color: #eee;
-  padding: 10px;
+
   outline-style: inset;
   outline-width: 1px;
   outline-color: #979797;
 }
 
 main {
-  padding: 150px;
   background-color: #eee;
-  height: 500px;
+  height: 800px;
+  overflow: auto;
+  margin: 0 auto;
   outline-style: inset;
   outline-width: 1px;
   outline-color: #979797;
-}
-
-#account-tab-content,
-#recipes-tab-content {
-  display: none;
 }
 
 #recipe-list {
@@ -69,7 +92,7 @@ button {
   outline: solid #979797;
   display: block;
   margin: auto;
-  background: #ffffff;
+  background: solid #ffffff;
   z-index: 2;
 }
 
@@ -154,9 +177,9 @@ img {
 }
 
 .body1 {
-  position: absolute;
-  top: 35%;
-  left: 44%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: rgb(56, 207, 50);
   font-weight: 300;
   font-size: 24px;
@@ -165,30 +188,47 @@ img {
   text-shadow: 3px 3px 4px rgb(56, 224, 49, 0.4);
   z-index: 2;
 }
-
-.profile-info,
-.account-settings,
-.uploaded-recipes {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.container {
+  font-size: 20px;
+  margin: 0;
+  padding: 30px;
+  overflow: auto;
+  max-height: 800px;
 }
-
-.profile-info h2,
-.account-settings h2,
-.uploaded-recipes h2 {
-  margin-top: 0;
-  color: #8bc34a;
+.titleContainer {
+  display: flex;
+  justify-content: space-between;
 }
-
-/* Color variations for sections */
-.account-settings {
-  background-color: #f9fbe7;
+#recipeName {
+  font-weight: 600;
 }
-
-.uploaded-recipes {
-  background-color: #dcedc8;
+#instructionsBox {
+  display: flex;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  padding: 0px;
+  flex-direction: column;
+}
+#timeContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#allergensContainer {
+  padding-bottom: 20px;
+}
+.time {
+  padding: 0;
+  margin: 0;
+}
+#buttonContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.buttons {
+  border-radius: 10px;
+  padding: 10px;
+  border: 2px solid black;
+  font-size: 22px;
+  font-weight: 550;
 }

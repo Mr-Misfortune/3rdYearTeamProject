@@ -1,25 +1,27 @@
 import { db, auth } from "./firebase.js";
 
 document
-  .getElementById("create-account-form")
+  .getElementById("login-form")
   .addEventListener("submit", function (event) {
     event.preventDefault();
 
+    const displayName = document.getElementById("display-name").value;
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-
-        // Automatically create a Firestore collection with the user's UID
-
-        const userCollection = db.collection(user.uid);
-
-        alert("Account created successfully! You can now log in.");
-        window.location.href = "login.html"; // Redirect to the login page
+      .then(function (result) {
+        // Update profile directly
+        result.user.updateProfile({
+          displayName: displayName,
+        });
+      })
+      .then(() => {
+        alert("Account created successfully!");
+        // Redirect after account creation and profile update
+        window.location.href = "./login.html";
       })
       .catch((error) => {
         console.error("Account creation error:", error.message);
