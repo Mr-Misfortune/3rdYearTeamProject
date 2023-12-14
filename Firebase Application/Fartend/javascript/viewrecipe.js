@@ -2,20 +2,27 @@ import { db } from "./firebase.js";
 
 // Helper function to insert line breaks dynamically
 function insertLineBreaks(text, maxLineLength) {
-  const words = text.split(/\s+/);
+  const wordsAndSentences = text.match(/\S+|\s*$/g);
 
   let currentLine = "";
   const lines = [];
 
-  words.forEach((word) => {
+  wordsAndSentences.forEach((wordOrSentence) => {
     const candidateLine =
-      currentLine.length === 0 ? word : `${currentLine} ${word}`;
+      currentLine.length === 0
+        ? wordOrSentence
+        : `${currentLine} ${wordOrSentence}`;
 
-    if (candidateLine.length <= maxLineLength) {
+    // Check if the candidate line exceeds the max length or contains a number followed by a period
+    if (
+      candidateLine.length <= maxLineLength &&
+      !/\d\.$/.test(candidateLine) &&
+      !/[.!?]$/.test(candidateLine)
+    ) {
       currentLine = candidateLine;
     } else {
       lines.push(currentLine.trim());
-      currentLine = word;
+      currentLine = wordOrSentence;
     }
   });
 
@@ -69,7 +76,7 @@ function displayRecipeDetails(recipe) {
   const ingredientsWithLineBreaks = insertLineBreaks(recipe.ingredients, 50);
 
   // Insert line breaks dynamically for instructions
-  const instructionsWithLineBreaks = insertLineBreaks(recipe.instructions, 50);
+  const instructionsWithLineBreaks = insertLineBreaks(recipe.instructions, 80);
 
   document.getElementById(
     "recipeName"
@@ -79,7 +86,7 @@ function displayRecipeDetails(recipe) {
   ).textContent = `Submitted By: ${recipe.username}`;
   document.getElementById(
     "ingredientsContainer"
-  ).innerHTML = `<h4>Ingredients:</h4>${ingredientsWithLineBreaks}`;
+  ).innerHTML = `<h4>Ingredients:</h4>${recipe.ingredients}`;
   document.getElementById(
     "instructionsBox"
   ).innerHTML = `<p>${instructionsWithLineBreaks}</p>`;

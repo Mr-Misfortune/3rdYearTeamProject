@@ -5,14 +5,12 @@ import { db, auth } from "./firebase.js";
 const homeScreen = document.getElementById("home-page");
 const accountTabContent = document.getElementById("account-tab-content");
 const recipesTabContent = document.getElementById("recipes-tab-content");
-const userDisplay = document.getElementById("user-details");
 const userNameDisplay = document.getElementById("user-name");
 const userEmailDisplay = document.getElementById("user-email");
 const recipeList = document.getElementById("recipe-list");
 const authButton = document.getElementById("auth-button");
 const createAccountButton = document.getElementById("create-account-button");
 const searchRecipesButton = document.getElementById("search-tab");
-//const dietaryTagsFilter = document.getElementById("dietary-tags-filter");
 const addRecipeButton = document.getElementById("submit-recipe-button");
 document.getElementById("homebutton").addEventListener("click", () => {
   window.location.href = "index.html";
@@ -41,8 +39,8 @@ auth.onAuthStateChanged((user) => {
     addRecipeButton.style.display = "block"; // Show the add recipe button when logged in
   } else {
     // User is signed out
-    userDisplay.innerHTML = "";
-    userEmailDisplay.innerHTML = "";
+    userNameDisplay.innerHTML = `Name: Login to view your account details.`;
+    userEmailDisplay.innerHTML = `Email: Login to view your account details.`;
     homeScreen.style.display = "block";
     accountTabContent.style.display = "none";
     recipesTabContent.style.display = "none";
@@ -94,10 +92,7 @@ function addRecipe() {
   window.location.href = "sub-recipe.html";
 }
 
-// ... (Your existing JavaScript code) ...
-
 function loadRecipes(userId) {
-  // Fetch and display user's recipes from Firestore
   db.collection("Recipes")
     .where("userId", "==", userId)
     .get()
@@ -110,14 +105,12 @@ function loadRecipes(userId) {
         recipeButton.classList.add("recipe-button");
         recipeButton.textContent = doc.data().recipeName;
 
-        // Set data-internal-id attribute with the internalID from Firestore
         recipeButton.setAttribute("data-internal-id", doc.data().internalID);
 
-        // Add click event listener to each recipe button
         recipeButton.addEventListener("click", (event) => {
           const internalID =
             event.currentTarget.getAttribute("data-internal-id");
-          // Redirect to the view recipe page with the internalID as a query parameter
+
           window.location.href = `viewrecipe.html?internalID=${internalID}`;
         });
 

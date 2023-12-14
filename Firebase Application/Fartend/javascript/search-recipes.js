@@ -4,26 +4,44 @@ const button = document.getElementById("submit");
 const searchResults = document.getElementById("searchResults");
 button.addEventListener("click", searchRecipes);
 
+const searchInput = document.getElementById("search-query");
+const dietaryTagCheckboxes = document.getElementsByName("Tags");
+
+searchInput.addEventListener("input", searchRecipes);
+dietaryTagCheckboxes.forEach((checkbox) =>
+  checkbox.addEventListener("change", searchRecipes)
+);
+
 function searchRecipes(event) {
   // Prevent the default form submission behavior
   event.preventDefault();
 
-  const searchText = document.getElementById("search-query").value;
+  const searchText = document
+    .getElementById("search-query")
+    .value.toLowerCase();
+  const dietaryTags = Array.from(document.getElementsByName("Tags"))
+    .filter((tagCheckbox) => tagCheckbox.checked)
+    .map((checkedTag) => checkedTag.value.toLowerCase());
+
   console.log("Search Text:", searchText);
+  console.log("Dietary Tags:", dietaryTags);
 
   const recipesRef = db.collection("Recipes");
 
   return recipesRef
-    .where("recipeName", ">=", searchText)
-    .where("recipeName", "<=", searchText + "\uf8ff")
     .get()
     .then((querySnapshot) => {
-      console.log("Query Snapshot:", querySnapshot);
-
       const matchingRecipes = [];
+
       querySnapshot.forEach((doc) => {
-        console.log("Document Data:", doc.data());
-        matchingRecipes.push(doc.data());
+        const recipe = doc.data();
+        const recipeNameLower = recipe.recipeName.toLowerCase();
+        if (
+          recipeNameLower.includes(searchText) ||
+          dietaryTags.some((tag) => recipe.dietaryTags.includes(tag))
+        ) {
+          matchingRecipes.push(recipe);
+        }
       });
 
       console.log("Matching Recipes:", matchingRecipes);
@@ -34,12 +52,10 @@ function searchRecipes(event) {
       console.error("Error getting recipes:", error);
     });
 }
-// Attach the searchRecipes function to the form's submit event
+
 document
   .getElementById("search-form")
   .addEventListener("submit", searchRecipes);
-
-// ... (Your existing code)
 
 function displayRecipes(recipes) {
   searchResults.innerHTML = "";
