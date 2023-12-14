@@ -13,12 +13,15 @@ document
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .then(function (result) {
-        alert("Account created successfully!");
-
+        // Update profile directly
         result.user.updateProfile({
           displayName: displayName,
         });
-        window.location.href = "index.html";
+      })
+      .then(() => {
+        alert("Account created successfully!");
+        // Redirect after account creation and profile update
+        window.location.href = "https://example.com/redirect-page";
       })
       .catch((error) => {
         console.error("Account creation error:", error.message);
