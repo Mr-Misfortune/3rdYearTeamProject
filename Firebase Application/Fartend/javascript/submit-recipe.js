@@ -24,7 +24,7 @@ document.getElementById("homebutton").addEventListener("click", () => {
 recipeForm.addEventListener("submit", async (event) => {
   event.preventDefault();
 
-  const recipeName = document.getElementById("recipe-title").value;
+  const recipeName = document.getElementById("title").value;
   const ingredients = document.getElementById("ingredients").value;
   const instructions = document.getElementById("instructions").value;
 
@@ -32,9 +32,9 @@ recipeForm.addEventListener("submit", async (event) => {
   const cooktime = document.getElementById("cook-time").value;
   const serves = document.getElementById("serves").value;
   const dietaryTagsSelect = document.getElementById("dietary-tags");
-  const dietaryTags = Array.from(dietaryTagsSelect.selectedOptions).map(
-    (option) => option.value
-  );
+  const dietaryTags = Array.from(
+    dietaryTagsSelect.querySelectorAll("input:checked")
+  ).map((checkbox) => checkbox.value);
 
   const user = auth.currentUser;
 
@@ -45,9 +45,6 @@ recipeForm.addEventListener("submit", async (event) => {
         // Regenerate internalID or handle the situation accordingly
       } else {
         console.log("internalID does not exist");
-
-        const userRecipesCollection = db.collection(user.uid);
-
         // Add to the general "Recipes" collection
         const generalRecipeRef = await generalRecipesCollection.add({
           userId: user.uid,

@@ -43,23 +43,21 @@ function displayRecipeDetails(recipe) {
   ).textContent = `Recipe Name: ${recipe.recipeName}`;
   document.getElementById(
     "submittedBy"
-  ).textContent = `Submitted By: ${recipe.submittedBy}`;
+  ).textContent = `Submitted By: ${recipe.username}`;
   document.getElementById(
     "measurementContainer"
   ).innerHTML = `<h4>Ingredients:</h4>${recipe.ingredients}`;
   document.getElementById("instructionsBox").textContent = recipe.instructions;
   document.getElementById(
     "prepTime"
-  ).textContent = `Prep Time: ${recipe.prepTime}`;
+  ).textContent = `Prep Time: ${recipe.preptime}`;
   document.getElementById(
     "cookTime"
-  ).textContent = `Cook Time: ${recipe.cookTime}`;
-  document.getElementById(
-    "servings"
-  ).textContent = `Serves: ${recipe.servings}`;
+  ).textContent = `Cook Time: ${recipe.cooktime}`;
+  document.getElementById("servings").textContent = `Serves: ${recipe.serves}`;
   document.getElementById(
     "allergens"
-  ).textContent = `Allergens: ${recipe.allergens.join(", ")}`;
+  ).textContent = `Allergens: ${recipe.dietaryTags.join(", ")}`;
   // Add more elements as needed
 
   // If you want to update the entire HTML content, you can use the following:
