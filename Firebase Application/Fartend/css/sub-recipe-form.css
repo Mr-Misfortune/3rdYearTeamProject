@@ -46,6 +46,17 @@
     border-right: 2px solid #92cc54;
 }
 
+#ingredients:focus {
+    border-color: #92cc54;
+    box-shadow: 0 0 3px 2px #9ae24c80;
+}
+
+#ingredients:focus {
+    color: #0f0e0e;
+    border: none;
+    background-color: #fff; 
+}
+
 #instructions:focus {
     border-color: #92cc54;
     box-shadow: 0 0 3px 2px #9ae24c80;

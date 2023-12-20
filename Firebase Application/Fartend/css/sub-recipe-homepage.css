@@ -24,8 +24,6 @@ header {
   padding: 25px !important;
   border-top-left-radius: 15px !important;
   border-top-right-radius: 15px !important;
-  border-bottom-left-radius: 15px !important;
-  border-bottom-right-radius: 15px !important;
   outline-style: inset !important;
   outline-width: 1px !important;
   outline-color: #979797 !important;
@@ -33,6 +31,8 @@ header {
 }
 header:hover {
   transform: scale(1.05);
+  border-bottom-left-radius: 15px !important;
+  border-bottom-right-radius: 15px !important;
 }
 
 nav {
